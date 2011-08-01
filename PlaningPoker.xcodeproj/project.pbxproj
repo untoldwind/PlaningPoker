@@ -24,6 +24,28 @@
 		8826C15713E6DE2E004982E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8826C15513E6DE2E004982E7 /* InfoPlist.strings */; };
 		8826C15913E6DE2E004982E7 /* PlaningPokerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 8826C15813E6DE2E004982E7 /* PlaningPokerTests.h */; };
 		8826C15B13E6DE2E004982E7 /* PlaningPokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C15A13E6DE2E004982E7 /* PlaningPokerTests.m */; };
+		8826C16E13E6DFD8004982E7 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C16D13E6DFD8004982E7 /* AppIcon.png */; };
+		8826C17013E6DFE6004982E7 /* AppIcon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C16F13E6DFE6004982E7 /* AppIcon_small.png */; };
+		8826C17213E6E02D004982E7 /* AppIcon_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C17113E6E02D004982E7 /* AppIcon_medium.png */; };
+		8826C17713E6E05E004982E7 /* CardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C17413E6E05E004982E7 /* CardDeck.m */; };
+		8826C17813E6E05E004982E7 /* CardDecks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C17613E6E05E004982E7 /* CardDecks.m */; };
+		8826C18113E6E08D004982E7 /* coffee_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C17C13E6E08D004982E7 /* coffee_big.png */; };
+		8826C18213E6E08D004982E7 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C17D13E6E08D004982E7 /* coffee.png */; };
+		8826C18B13E6E10E004982E7 /* CardDeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C18913E6E10E004982E7 /* CardDeckViewController.m */; };
+		8826C19213E6E4AE004982E7 /* CardDeckView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C19113E6E4AE004982E7 /* CardDeckView_iPhone.xib */; };
+		8826C19413E6E4B7004982E7 /* CardDeckView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C19313E6E4B7004982E7 /* CardDeckView_iPad.xib */; };
+		8826C19713E6E4D8004982E7 /* CardHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C19613E6E4D8004982E7 /* CardHiddenViewController.m */; };
+		8826C19D13E6F3A1004982E7 /* CardHiddenView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C19C13E6F3A1004982E7 /* CardHiddenView_iPad.xib */; };
+		8826C19F13E6F3B7004982E7 /* CardHiddenView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C19E13E6F3B6004982E7 /* CardHiddenView_iPhone.xib */; };
+		8826C1A513E6F7D6004982E7 /* card_big_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C1A213E6F7D6004982E7 /* card_big_background.png */; };
+		8826C1A613E6F7D6004982E7 /* card_big_hidden.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C1A313E6F7D6004982E7 /* card_big_hidden.png */; };
+		8826C1A713E6F7D6004982E7 /* card_small_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C1A413E6F7D6004982E7 /* card_small_background.png */; };
+		8839A79613E6FC7800E5FC13 /* card_medium_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839A79513E6FC7800E5FC13 /* card_medium_background.png */; };
+		8839A79813E6FDBD00E5FC13 /* card_huge_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839A79713E6FDBD00E5FC13 /* card_huge_background.png */; };
+		8839A79A13E6FE2A00E5FC13 /* card_huge_hidden.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839A79913E6FE2A00E5FC13 /* card_huge_hidden.png */; };
+		8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */; };
+		8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */; };
+		8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,24 +63,51 @@
 		8826C12513E6DE2E004982E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8826C12713E6DE2E004982E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8826C12913E6DE2E004982E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8826C12D13E6DE2E004982E7 /* PlaningPoker-Info.plist */ = {isa = PBXFileReference; path = "PlaningPoker-Info.plist"; sourceTree = "<group>"; };
+		8826C12D13E6DE2E004982E7 /* PlaningPoker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlaningPoker-Info.plist"; sourceTree = "<group>"; };
 		8826C12F13E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8826C13113E6DE2E004982E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8826C13313E6DE2E004982E7 /* PlaningPoker-Prefix.pch */ = {isa = PBXFileReference; path = "PlaningPoker-Prefix.pch"; sourceTree = "<group>"; };
-		8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */ = {isa = PBXFileReference; path = PlaningPokerAppDelegate.h; sourceTree = "<group>"; };
+		8826C13313E6DE2E004982E7 /* PlaningPoker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlaningPoker-Prefix.pch"; sourceTree = "<group>"; };
+		8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaningPokerAppDelegate.h; sourceTree = "<group>"; };
 		8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaningPokerAppDelegate.m; sourceTree = "<group>"; };
-		8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = PlaningPokerAppDelegate_iPhone.h; path = iPhone/PlaningPokerAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlaningPokerAppDelegate_iPhone.h; path = iPhone/PlaningPokerAppDelegate_iPhone.h; sourceTree = "<group>"; };
 		8826C13913E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PlaningPokerAppDelegate_iPhone.m; path = iPhone/PlaningPokerAppDelegate_iPhone.m; sourceTree = "<group>"; };
 		8826C13C13E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
-		8826C13F13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.h */ = {isa = PBXFileReference; name = PlaningPokerAppDelegate_iPad.h; path = iPad/PlaningPokerAppDelegate_iPad.h; sourceTree = "<group>"; };
+		8826C13F13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlaningPokerAppDelegate_iPad.h; path = iPad/PlaningPokerAppDelegate_iPad.h; sourceTree = "<group>"; };
 		8826C14013E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PlaningPokerAppDelegate_iPad.m; path = iPad/PlaningPokerAppDelegate_iPad.m; sourceTree = "<group>"; };
 		8826C14313E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
 		8826C14A13E6DE2E004982E7 /* PlaningPokerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaningPokerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8826C14B13E6DE2E004982E7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		8826C15413E6DE2E004982E7 /* PlaningPokerTests-Info.plist */ = {isa = PBXFileReference; path = "PlaningPokerTests-Info.plist"; sourceTree = "<group>"; };
+		8826C15413E6DE2E004982E7 /* PlaningPokerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlaningPokerTests-Info.plist"; sourceTree = "<group>"; };
 		8826C15613E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8826C15813E6DE2E004982E7 /* PlaningPokerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaningPokerTests.h; sourceTree = "<group>"; };
 		8826C15A13E6DE2E004982E7 /* PlaningPokerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaningPokerTests.m; sourceTree = "<group>"; };
+		8826C16D13E6DFD8004982E7 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		8826C16F13E6DFE6004982E7 /* AppIcon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_small.png; sourceTree = "<group>"; };
+		8826C17113E6E02D004982E7 /* AppIcon_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_medium.png; sourceTree = "<group>"; };
+		8826C17313E6E05E004982E7 /* CardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDeck.h; sourceTree = "<group>"; };
+		8826C17413E6E05E004982E7 /* CardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDeck.m; sourceTree = "<group>"; };
+		8826C17513E6E05E004982E7 /* CardDecks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDecks.h; sourceTree = "<group>"; };
+		8826C17613E6E05E004982E7 /* CardDecks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDecks.m; sourceTree = "<group>"; };
+		8826C17C13E6E08D004982E7 /* coffee_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_big.png; sourceTree = "<group>"; };
+		8826C17D13E6E08D004982E7 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		8826C18813E6E10E004982E7 /* CardDeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDeckViewController.h; sourceTree = "<group>"; };
+		8826C18913E6E10E004982E7 /* CardDeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDeckViewController.m; sourceTree = "<group>"; };
+		8826C19113E6E4AE004982E7 /* CardDeckView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardDeckView_iPhone.xib; path = iPhone/CardDeckView_iPhone.xib; sourceTree = "<group>"; };
+		8826C19313E6E4B7004982E7 /* CardDeckView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardDeckView_iPad.xib; path = iPad/CardDeckView_iPad.xib; sourceTree = "<group>"; };
+		8826C19513E6E4D8004982E7 /* CardHiddenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardHiddenViewController.h; sourceTree = "<group>"; };
+		8826C19613E6E4D8004982E7 /* CardHiddenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardHiddenViewController.m; sourceTree = "<group>"; };
+		8826C19C13E6F3A1004982E7 /* CardHiddenView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardHiddenView_iPad.xib; path = iPad/CardHiddenView_iPad.xib; sourceTree = "<group>"; };
+		8826C19E13E6F3B6004982E7 /* CardHiddenView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardHiddenView_iPhone.xib; path = iPhone/CardHiddenView_iPhone.xib; sourceTree = "<group>"; };
+		8826C1A213E6F7D6004982E7 /* card_big_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_big_background.png; path = iPhone/card_big_background.png; sourceTree = "<group>"; };
+		8826C1A313E6F7D6004982E7 /* card_big_hidden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_big_hidden.png; path = iPhone/card_big_hidden.png; sourceTree = "<group>"; };
+		8826C1A413E6F7D6004982E7 /* card_small_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_small_background.png; path = iPhone/card_small_background.png; sourceTree = "<group>"; };
+		8839A79513E6FC7800E5FC13 /* card_medium_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_medium_background.png; path = iPad/card_medium_background.png; sourceTree = "<group>"; };
+		8839A79713E6FDBD00E5FC13 /* card_huge_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_huge_background.png; path = iPad/card_huge_background.png; sourceTree = "<group>"; };
+		8839A79913E6FE2A00E5FC13 /* card_huge_hidden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_huge_hidden.png; path = iPad/card_huge_hidden.png; sourceTree = "<group>"; };
+		8839A79B13E6FE9B00E5FC13 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPhone.xib; path = iPhone/SettingsView_iPhone.xib; sourceTree = "<group>"; };
+		8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPad.xib; path = iPad/SettingsView_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +138,9 @@
 		8826C11613E6DE2E004982E7 = {
 			isa = PBXGroup;
 			children = (
+				8826C17113E6E02D004982E7 /* AppIcon_medium.png */,
+				8826C16F13E6DFE6004982E7 /* AppIcon_small.png */,
+				8826C16D13E6DFD8004982E7 /* AppIcon.png */,
 				8826C12B13E6DE2E004982E7 /* PlaningPoker */,
 				8826C15213E6DE2E004982E7 /* PlaningPokerTests */,
 				8826C12413E6DE2E004982E7 /* Frameworks */,
@@ -119,6 +171,16 @@
 		8826C12B13E6DE2E004982E7 /* PlaningPoker */ = {
 			isa = PBXGroup;
 			children = (
+				8826C17313E6E05E004982E7 /* CardDeck.h */,
+				8826C17413E6E05E004982E7 /* CardDeck.m */,
+				8826C17513E6E05E004982E7 /* CardDecks.h */,
+				8826C17613E6E05E004982E7 /* CardDecks.m */,
+				8826C18813E6E10E004982E7 /* CardDeckViewController.h */,
+				8826C18913E6E10E004982E7 /* CardDeckViewController.m */,
+				8826C19513E6E4D8004982E7 /* CardHiddenViewController.h */,
+				8826C19613E6E4D8004982E7 /* CardHiddenViewController.m */,
+				8839A79B13E6FE9B00E5FC13 /* SettingsViewController.h */,
+				8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */,
 				8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */,
 				8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */,
 				8826C13713E6DE2E004982E7 /* iPhone */,
@@ -142,9 +204,17 @@
 		8826C13713E6DE2E004982E7 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				8826C1A213E6F7D6004982E7 /* card_big_background.png */,
+				8826C1A313E6F7D6004982E7 /* card_big_hidden.png */,
+				8826C1A413E6F7D6004982E7 /* card_small_background.png */,
+				8826C17C13E6E08D004982E7 /* coffee_big.png */,
+				8826C17D13E6E08D004982E7 /* coffee.png */,
 				8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */,
 				8826C13913E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m */,
 				8826C13B13E6DE2E004982E7 /* MainWindow_iPhone.xib */,
+				8826C19113E6E4AE004982E7 /* CardDeckView_iPhone.xib */,
+				8826C19E13E6F3B6004982E7 /* CardHiddenView_iPhone.xib */,
+				8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -152,9 +222,15 @@
 		8826C13E13E6DE2E004982E7 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				8839A79913E6FE2A00E5FC13 /* card_huge_hidden.png */,
+				8839A79713E6FDBD00E5FC13 /* card_huge_background.png */,
+				8839A79513E6FC7800E5FC13 /* card_medium_background.png */,
 				8826C13F13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.h */,
 				8826C14013E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m */,
 				8826C14213E6DE2E004982E7 /* MainWindow_iPad.xib */,
+				8826C19313E6E4B7004982E7 /* CardDeckView_iPad.xib */,
+				8826C19C13E6F3A1004982E7 /* CardHiddenView_iPad.xib */,
+				8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -251,6 +327,23 @@
 				8826C13013E6DE2E004982E7 /* InfoPlist.strings in Resources */,
 				8826C13D13E6DE2E004982E7 /* MainWindow_iPhone.xib in Resources */,
 				8826C14413E6DE2E004982E7 /* MainWindow_iPad.xib in Resources */,
+				8826C16E13E6DFD8004982E7 /* AppIcon.png in Resources */,
+				8826C17013E6DFE6004982E7 /* AppIcon_small.png in Resources */,
+				8826C17213E6E02D004982E7 /* AppIcon_medium.png in Resources */,
+				8826C18113E6E08D004982E7 /* coffee_big.png in Resources */,
+				8826C18213E6E08D004982E7 /* coffee.png in Resources */,
+				8826C19213E6E4AE004982E7 /* CardDeckView_iPhone.xib in Resources */,
+				8826C19413E6E4B7004982E7 /* CardDeckView_iPad.xib in Resources */,
+				8826C19D13E6F3A1004982E7 /* CardHiddenView_iPad.xib in Resources */,
+				8826C19F13E6F3B7004982E7 /* CardHiddenView_iPhone.xib in Resources */,
+				8826C1A513E6F7D6004982E7 /* card_big_background.png in Resources */,
+				8826C1A613E6F7D6004982E7 /* card_big_hidden.png in Resources */,
+				8826C1A713E6F7D6004982E7 /* card_small_background.png in Resources */,
+				8839A79613E6FC7800E5FC13 /* card_medium_background.png in Resources */,
+				8839A79813E6FDBD00E5FC13 /* card_huge_background.png in Resources */,
+				8839A79A13E6FE2A00E5FC13 /* card_huge_hidden.png in Resources */,
+				8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */,
+				8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +383,11 @@
 				8826C13613E6DE2E004982E7 /* PlaningPokerAppDelegate.m in Sources */,
 				8826C13A13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m in Sources */,
 				8826C14113E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m in Sources */,
+				8826C17713E6E05E004982E7 /* CardDeck.m in Sources */,
+				8826C17813E6E05E004982E7 /* CardDecks.m in Sources */,
+				8826C18B13E6E10E004982E7 /* CardDeckViewController.m in Sources */,
+				8826C19713E6E4D8004982E7 /* CardHiddenViewController.m in Sources */,
+				8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +565,7 @@
 				8826C16013E6DE2E004982E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8826C16113E6DE2E004982E7 /* Build configuration list for PBXNativeTarget "PlaningPokerTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +574,7 @@
 				8826C16313E6DE2E004982E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
