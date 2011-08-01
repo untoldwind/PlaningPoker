@@ -11,10 +11,12 @@
 @implementation PlaningPokerAppDelegate
 
 @synthesize window = _window;
+@synthesize cardDeckViewController = _cardDeckViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window.rootViewController = self.cardDeckViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#include "CardDeckViewController.h"
+
 @interface PlaningPokerAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet CardDeckViewController *cardDeckViewController;
 
 @end

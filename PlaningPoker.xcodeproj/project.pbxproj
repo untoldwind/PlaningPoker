@@ -46,6 +46,7 @@
 		8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */; };
 		8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */; };
 		8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */; };
+		887D7B4613E74D4D0034BB10 /* CardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* CardBackground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPhone.xib; path = iPhone/SettingsView_iPhone.xib; sourceTree = "<group>"; };
 		8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPad.xib; path = iPad/SettingsView_iPad.xib; sourceTree = "<group>"; };
+		887D7B4413E74D4D0034BB10 /* CardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackground.h; sourceTree = "<group>"; };
+		887D7B4513E74D4D0034BB10 /* CardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 		8826C12B13E6DE2E004982E7 /* PlaningPoker */ = {
 			isa = PBXGroup;
 			children = (
+				887D7B4413E74D4D0034BB10 /* CardBackground.h */,
+				887D7B4513E74D4D0034BB10 /* CardBackground.m */,
 				8826C17313E6E05E004982E7 /* CardDeck.h */,
 				8826C17413E6E05E004982E7 /* CardDeck.m */,
 				8826C17513E6E05E004982E7 /* CardDecks.h */,
@@ -388,6 +393,7 @@
 				8826C18B13E6E10E004982E7 /* CardDeckViewController.m in Sources */,
 				8826C19713E6E4D8004982E7 /* CardHiddenViewController.m in Sources */,
 				8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */,
+				887D7B4613E74D4D0034BB10 /* CardBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

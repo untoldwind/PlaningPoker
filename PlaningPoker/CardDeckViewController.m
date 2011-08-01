@@ -8,6 +8,8 @@
 
 #import "CardDeckViewController.h"
 
+#import "CardBackground.h"
+
 @implementation CardDeckViewController
 
 @synthesize cardButtons = _cardButtons;
@@ -79,6 +81,8 @@
             button.hidden = NO;
             id cardValue = [self.currentDeck.cardValues objectAtIndex:button.tag];
             
+            [button setBackgroundImage:[CardBackground normal:button.frame.size] forState:UIControlStateNormal];
+             
             if ( [cardValue isKindOfClass:[NSString class]] ) {
                 [button setTitle:cardValue
                         forState:UIControlStateNormal];
