@@ -94,6 +94,19 @@
     } 
 }
 
+- (BOOL)hideSelectedCard
+{
+    return _hideSelectedCard;
+}
+
+- (void)setHideSelectedCard:(BOOL)hideSelectedCard
+{
+    if ( _hideSelectedCard != hideSelectedCard) {
+        _hideSelectedCard = hideSelectedCard;
+        [[NSUserDefaults standardUserDefaults] setBool:hideSelectedCard forKey:@"hideSelectedCard"];
+    }
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -117,10 +130,16 @@
 {
     [super viewDidLoad];
 
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults integerForKey:@"activeCardDeck"];
+    NSDictionary *initDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  [NSNumber numberWithBool:YES], @"hideSelectedCard", 
+                                  [NSNumber numberWithInt:1], @"activeCardDeck",
+                                  nil];
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults registerDefaults:initDefaults];
+
     _cardDecks = [[CardDecks alloc] init];    
+    self.hideSelectedCard = [userDefaults boolForKey:@"hideSelectedCard"];
     [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardDeck"]];
 }
 
@@ -133,8 +152,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) || (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end

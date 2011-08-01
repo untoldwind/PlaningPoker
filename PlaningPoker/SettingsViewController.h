@@ -17,6 +17,7 @@
 
 @property (nonatomic, readonly) CardDecks *cardDecks;
 @property (nonatomic, readonly) CardDeck *currentDeck;
+@property (nonatomic) BOOL hideSelectedCard;
 
 - (IBAction)setCurrentDeckIndex:(NSInteger)deckIndex;
 @end
@@ -29,8 +30,8 @@
 
 @property (nonatomic, retain) IBOutlet UITableView *cardDeckSelect;
 
+- (void)hideSelectedCardChanged:(id)sender;
 - (IBAction)linkSelected:(id)sender;
-
 - (IBAction)done:(id)sender;
 
 @end

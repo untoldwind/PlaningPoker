@@ -64,59 +64,98 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.delegate.cardDecks.numberOfDecks;
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Card deck";
+    switch (section) {
+        case 0:
+            return @"General";
+        case 1:
+            return @"Card Deck";
+    }
+    return nil;
 }
-static NSString *CellIdentifier = @"CardDeckCell";
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch(section) {
+        case 0:
+            return 1;
+        case 1:
+            return self.delegate.cardDecks.numberOfDecks;
+    }
+    return 0;
+}
+
+static NSString *CellIdentifier = @"SettingsCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    CardDeck *cardDeck = [self.delegate.cardDecks deckByIndex:indexPath.row];
-    if ( cardDeck == self.delegate.currentDeck ) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        selectedDeckIndex = indexPath.row;
-    } else
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.textLabel.text = cardDeck.name;
-    
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = @"Hide selected card";
+            UISwitch *hideSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+            [hideSwitch setOn:self.delegate.hideSelectedCard];
+            [hideSwitch addTarget:self action:@selector(hideSelectedCardChanged:) forControlEvents:UIControlEventValueChanged];
+            cell.accessoryView = hideSwitch;
+            [hideSwitch release];
+            break;
+        case 1: {
+            CardDeck *cardDeck = [self.delegate.cardDecks deckByIndex:indexPath.row];
+            if ( cardDeck == self.delegate.currentDeck ) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                selectedDeckIndex = indexPath.row;
+            } else
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.text = cardDeck.name;
+            break;
+        }
+    }
     return cell;
+}
+
+- (void)hideSelectedCardChanged:(id)sender
+{
+    UISwitch *hideSwitch = (UISwitch *)sender;
+    
+    self.delegate.hideSelectedCard = hideSwitch.on;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if ( indexPath.row == selectedDeckIndex )
-        return;
+    switch (indexPath.section) {
+        case 1: {
+           if ( indexPath.row == selectedDeckIndex )
+                return;
     
-    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:selectedDeckIndex inSection:0];
+            NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:selectedDeckIndex inSection:1];
     
-    UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];    
-    if (newCell.accessoryType == UITableViewCellAccessoryNone) {
-        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        selectedDeckIndex = indexPath.row;
-        [self.delegate setCurrentDeckIndex:selectedDeckIndex];
-    }
+            UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];    
+            if (newCell.accessoryType == UITableViewCellAccessoryNone) {
+                newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+                selectedDeckIndex = indexPath.row;
+                [self.delegate setCurrentDeckIndex:selectedDeckIndex];
+            }
 
-    UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldIndexPath];    
-    if (oldCell.accessoryType == UITableViewCellAccessoryCheckmark) {
-        oldCell.accessoryType = UITableViewCellAccessoryNone;
+            UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldIndexPath];    
+            if (oldCell.accessoryType == UITableViewCellAccessoryCheckmark) {
+                oldCell.accessoryType = UITableViewCellAccessoryNone;
+            }
+            break;
+
+        }
     }
 }
 

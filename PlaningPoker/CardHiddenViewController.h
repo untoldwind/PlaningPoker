@@ -12,6 +12,9 @@
 
 @protocol CardHiddenViewControllerDelegate 
 - (void)cardHiddenFinished:(CardHiddenViewController *)controller;
+
+@property (nonatomic) BOOL hideSelectedCard;
+
 @end
 
 @interface CardHiddenViewController : UIViewController

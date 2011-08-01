@@ -57,6 +57,10 @@
 
     [self.cardButton setTitle:self.cardValueString forState:UIControlStateNormal];
     [self.cardButton setImage:self.cardValueImage forState:UIControlStateNormal];
+    if (!self.delegate.hideSelectedCard) {
+        [self.revealButton setHidden:YES];
+        [self.cardButton setHidden:NO];
+    }
 }
 
 - (void)viewDidUnload

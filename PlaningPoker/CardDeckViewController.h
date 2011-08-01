@@ -12,10 +12,14 @@
 #import "CardHiddenViewController.h"
 #import "SettingsViewController.h"
 
-@interface CardDeckViewController : UIViewController <CardHiddenViewControllerDelegate, SettingsViewControllerDelegate>
+@interface CardDeckViewController : UIViewController <CardHiddenViewControllerDelegate, SettingsViewControllerDelegate> {
+    @private 
+    BOOL _hideSelectedCard;
+}
 
 @property (nonatomic, readonly) CardDecks *cardDecks;
 @property (nonatomic, readonly) CardDeck *currentDeck;
+@property (nonatomic) BOOL hideSelectedCard;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 - (void)setCurrentDeckIndex:(NSInteger)deckIndex;
