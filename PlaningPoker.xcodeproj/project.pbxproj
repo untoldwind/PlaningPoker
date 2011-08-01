@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8826C12613E6DE2E004982E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C12513E6DE2E004982E7 /* UIKit.framework */; };
+		8826C12813E6DE2E004982E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C12713E6DE2E004982E7 /* Foundation.framework */; };
+		8826C12A13E6DE2E004982E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C12913E6DE2E004982E7 /* CoreGraphics.framework */; };
+		8826C13013E6DE2E004982E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8826C12E13E6DE2E004982E7 /* InfoPlist.strings */; };
+		8826C13213E6DE2E004982E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C13113E6DE2E004982E7 /* main.m */; };
+		8826C13613E6DE2E004982E7 /* PlaningPokerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */; };
+		8826C13A13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C13913E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m */; };
+		8826C13D13E6DE2E004982E7 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C13B13E6DE2E004982E7 /* MainWindow_iPhone.xib */; };
+		8826C14113E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C14013E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m */; };
+		8826C14413E6DE2E004982E7 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C14213E6DE2E004982E7 /* MainWindow_iPad.xib */; };
+		8826C14C13E6DE2E004982E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C14B13E6DE2E004982E7 /* SenTestingKit.framework */; };
+		8826C14D13E6DE2E004982E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C12513E6DE2E004982E7 /* UIKit.framework */; };
+		8826C14E13E6DE2E004982E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C12713E6DE2E004982E7 /* Foundation.framework */; };
+		8826C14F13E6DE2E004982E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826C12913E6DE2E004982E7 /* CoreGraphics.framework */; };
+		8826C15713E6DE2E004982E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8826C15513E6DE2E004982E7 /* InfoPlist.strings */; };
+		8826C15913E6DE2E004982E7 /* PlaningPokerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 8826C15813E6DE2E004982E7 /* PlaningPokerTests.h */; };
+		8826C15B13E6DE2E004982E7 /* PlaningPokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C15A13E6DE2E004982E7 /* PlaningPokerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8826C15013E6DE2E004982E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8826C11813E6DE2E004982E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8826C12013E6DE2E004982E7;
+			remoteInfo = PlaningPoker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8826C12113E6DE2E004982E7 /* PlaningPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaningPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8826C12513E6DE2E004982E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8826C12713E6DE2E004982E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8826C12913E6DE2E004982E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8826C12D13E6DE2E004982E7 /* PlaningPoker-Info.plist */ = {isa = PBXFileReference; path = "PlaningPoker-Info.plist"; sourceTree = "<group>"; };
+		8826C12F13E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8826C13113E6DE2E004982E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8826C13313E6DE2E004982E7 /* PlaningPoker-Prefix.pch */ = {isa = PBXFileReference; path = "PlaningPoker-Prefix.pch"; sourceTree = "<group>"; };
+		8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */ = {isa = PBXFileReference; path = PlaningPokerAppDelegate.h; sourceTree = "<group>"; };
+		8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaningPokerAppDelegate.m; sourceTree = "<group>"; };
+		8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = PlaningPokerAppDelegate_iPhone.h; path = iPhone/PlaningPokerAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		8826C13913E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PlaningPokerAppDelegate_iPhone.m; path = iPhone/PlaningPokerAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		8826C13C13E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		8826C13F13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.h */ = {isa = PBXFileReference; name = PlaningPokerAppDelegate_iPad.h; path = iPad/PlaningPokerAppDelegate_iPad.h; sourceTree = "<group>"; };
+		8826C14013E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PlaningPokerAppDelegate_iPad.m; path = iPad/PlaningPokerAppDelegate_iPad.m; sourceTree = "<group>"; };
+		8826C14313E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		8826C14A13E6DE2E004982E7 /* PlaningPokerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaningPokerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8826C14B13E6DE2E004982E7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8826C15413E6DE2E004982E7 /* PlaningPokerTests-Info.plist */ = {isa = PBXFileReference; path = "PlaningPokerTests-Info.plist"; sourceTree = "<group>"; };
+		8826C15613E6DE2E004982E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8826C15813E6DE2E004982E7 /* PlaningPokerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaningPokerTests.h; sourceTree = "<group>"; };
+		8826C15A13E6DE2E004982E7 /* PlaningPokerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaningPokerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8826C11E13E6DE2E004982E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826C12613E6DE2E004982E7 /* UIKit.framework in Frameworks */,
+				8826C12813E6DE2E004982E7 /* Foundation.framework in Frameworks */,
+				8826C12A13E6DE2E004982E7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8826C14613E6DE2E004982E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826C14C13E6DE2E004982E7 /* SenTestingKit.framework in Frameworks */,
+				8826C14D13E6DE2E004982E7 /* UIKit.framework in Frameworks */,
+				8826C14E13E6DE2E004982E7 /* Foundation.framework in Frameworks */,
+				8826C14F13E6DE2E004982E7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8826C11613E6DE2E004982E7 = {
+			isa = PBXGroup;
+			children = (
+				8826C12B13E6DE2E004982E7 /* PlaningPoker */,
+				8826C15213E6DE2E004982E7 /* PlaningPokerTests */,
+				8826C12413E6DE2E004982E7 /* Frameworks */,
+				8826C12213E6DE2E004982E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8826C12213E6DE2E004982E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8826C12113E6DE2E004982E7 /* PlaningPoker.app */,
+				8826C14A13E6DE2E004982E7 /* PlaningPokerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8826C12413E6DE2E004982E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8826C12513E6DE2E004982E7 /* UIKit.framework */,
+				8826C12713E6DE2E004982E7 /* Foundation.framework */,
+				8826C12913E6DE2E004982E7 /* CoreGraphics.framework */,
+				8826C14B13E6DE2E004982E7 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8826C12B13E6DE2E004982E7 /* PlaningPoker */ = {
+			isa = PBXGroup;
+			children = (
+				8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */,
+				8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */,
+				8826C13713E6DE2E004982E7 /* iPhone */,
+				8826C13E13E6DE2E004982E7 /* iPad */,
+				8826C12C13E6DE2E004982E7 /* Supporting Files */,
+			);
+			path = PlaningPoker;
+			sourceTree = "<group>";
+		};
+		8826C12C13E6DE2E004982E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8826C12D13E6DE2E004982E7 /* PlaningPoker-Info.plist */,
+				8826C12E13E6DE2E004982E7 /* InfoPlist.strings */,
+				8826C13113E6DE2E004982E7 /* main.m */,
+				8826C13313E6DE2E004982E7 /* PlaningPoker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8826C13713E6DE2E004982E7 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */,
+				8826C13913E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m */,
+				8826C13B13E6DE2E004982E7 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		8826C13E13E6DE2E004982E7 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				8826C13F13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.h */,
+				8826C14013E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m */,
+				8826C14213E6DE2E004982E7 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		8826C15213E6DE2E004982E7 /* PlaningPokerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8826C15813E6DE2E004982E7 /* PlaningPokerTests.h */,
+				8826C15A13E6DE2E004982E7 /* PlaningPokerTests.m */,
+				8826C15313E6DE2E004982E7 /* Supporting Files */,
+			);
+			path = PlaningPokerTests;
+			sourceTree = "<group>";
+		};
+		8826C15313E6DE2E004982E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8826C15413E6DE2E004982E7 /* PlaningPokerTests-Info.plist */,
+				8826C15513E6DE2E004982E7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8826C12013E6DE2E004982E7 /* PlaningPoker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8826C15E13E6DE2E004982E7 /* Build configuration list for PBXNativeTarget "PlaningPoker" */;
+			buildPhases = (
+				8826C11D13E6DE2E004982E7 /* Sources */,
+				8826C11E13E6DE2E004982E7 /* Frameworks */,
+				8826C11F13E6DE2E004982E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaningPoker;
+			productName = PlaningPoker;
+			productReference = 8826C12113E6DE2E004982E7 /* PlaningPoker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8826C14913E6DE2E004982E7 /* PlaningPokerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8826C16113E6DE2E004982E7 /* Build configuration list for PBXNativeTarget "PlaningPokerTests" */;
+			buildPhases = (
+				8826C14513E6DE2E004982E7 /* Sources */,
+				8826C14613E6DE2E004982E7 /* Frameworks */,
+				8826C14713E6DE2E004982E7 /* Resources */,
+				8826C14813E6DE2E004982E7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8826C15113E6DE2E004982E7 /* PBXTargetDependency */,
+			);
+			name = PlaningPokerTests;
+			productName = PlaningPokerTests;
+			productReference = 8826C14A13E6DE2E004982E7 /* PlaningPokerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8826C11813E6DE2E004982E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "ObjectCode GmbH";
+			};
+			buildConfigurationList = 8826C11B13E6DE2E004982E7 /* Build configuration list for PBXProject "PlaningPoker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8826C11613E6DE2E004982E7;
+			productRefGroup = 8826C12213E6DE2E004982E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8826C12013E6DE2E004982E7 /* PlaningPoker */,
+				8826C14913E6DE2E004982E7 /* PlaningPokerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8826C11F13E6DE2E004982E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826C13013E6DE2E004982E7 /* InfoPlist.strings in Resources */,
+				8826C13D13E6DE2E004982E7 /* MainWindow_iPhone.xib in Resources */,
+				8826C14413E6DE2E004982E7 /* MainWindow_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8826C14713E6DE2E004982E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826C15713E6DE2E004982E7 /* InfoPlist.strings in Resources */,
+				8826C15913E6DE2E004982E7 /* PlaningPokerTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8826C14813E6DE2E004982E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8826C11D13E6DE2E004982E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826C13213E6DE2E004982E7 /* main.m in Sources */,
+				8826C13613E6DE2E004982E7 /* PlaningPokerAppDelegate.m in Sources */,
+				8826C13A13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m in Sources */,
+				8826C14113E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8826C14513E6DE2E004982E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826C15B13E6DE2E004982E7 /* PlaningPokerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8826C15113E6DE2E004982E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8826C12013E6DE2E004982E7 /* PlaningPoker */;
+			targetProxy = 8826C15013E6DE2E004982E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8826C12E13E6DE2E004982E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8826C12F13E6DE2E004982E7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8826C13B13E6DE2E004982E7 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8826C13C13E6DE2E004982E7 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		8826C14213E6DE2E004982E7 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8826C14313E6DE2E004982E7 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+		8826C15513E6DE2E004982E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8826C15613E6DE2E004982E7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8826C15C13E6DE2E004982E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8826C15D13E6DE2E004982E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8826C15F13E6DE2E004982E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaningPoker/PlaningPoker-Prefix.pch";
+				INFOPLIST_FILE = "PlaningPoker/PlaningPoker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8826C16013E6DE2E004982E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaningPoker/PlaningPoker-Prefix.pch";
+				INFOPLIST_FILE = "PlaningPoker/PlaningPoker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8826C16213E6DE2E004982E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PlaningPoker.app/PlaningPoker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaningPoker/PlaningPoker-Prefix.pch";
+				INFOPLIST_FILE = "PlaningPokerTests/PlaningPokerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		8826C16313E6DE2E004982E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PlaningPoker.app/PlaningPoker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaningPoker/PlaningPoker-Prefix.pch";
+				INFOPLIST_FILE = "PlaningPokerTests/PlaningPokerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8826C11B13E6DE2E004982E7 /* Build configuration list for PBXProject "PlaningPoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8826C15C13E6DE2E004982E7 /* Debug */,
+				8826C15D13E6DE2E004982E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8826C15E13E6DE2E004982E7 /* Build configuration list for PBXNativeTarget "PlaningPoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8826C15F13E6DE2E004982E7 /* Debug */,
+				8826C16013E6DE2E004982E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8826C16113E6DE2E004982E7 /* Build configuration list for PBXNativeTarget "PlaningPokerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8826C16213E6DE2E004982E7 /* Debug */,
+				8826C16313E6DE2E004982E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8826C11813E6DE2E004982E7 /* Project object */;
+}
