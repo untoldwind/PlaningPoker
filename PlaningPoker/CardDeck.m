@@ -22,8 +22,8 @@
 {
     self = [super init];
     if (self) {
-        _name = [name copy];
-        _cardValues = [cardValues copy];
+        _name = [name retain];
+        _cardValues = [cardValues retain];
     }
     
     return self;
