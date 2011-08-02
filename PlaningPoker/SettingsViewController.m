@@ -24,7 +24,12 @@
 {
     [self.delegate settingsFinished:self];
 }
-     
+
+- (void)settingsSelectColorFinished:(SettingsSelectColorViewController *)controller
+{
+    [self dismissModalViewControllerAnimated:YES];    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -85,7 +90,7 @@
 {
     switch(section) {
         case 0:
-            return 1;
+            return 2;
         case 1:
             return self.delegate.cardDecks.numberOfDecks;
     }
@@ -103,12 +108,20 @@ static NSString *CellIdentifier = @"SettingsCell";
 
     switch (indexPath.section) {
         case 0:
-            cell.textLabel.text = @"Hide selected card";
-            UISwitch *hideSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-            [hideSwitch setOn:self.delegate.hideSelectedCard];
-            [hideSwitch addTarget:self action:@selector(hideSelectedCardChanged:) forControlEvents:UIControlEventValueChanged];
-            cell.accessoryView = hideSwitch;
-            [hideSwitch release];
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"Hide selected card";
+                    UISwitch *hideSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+                    [hideSwitch setOn:self.delegate.hideSelectedCard];
+                    [hideSwitch addTarget:self action:@selector(hideSelectedCardChanged:) forControlEvents:UIControlEventValueChanged];
+                    cell.accessoryView = hideSwitch;
+                    [hideSwitch release];
+                    break;
+                case 1:
+                    cell.textLabel.text = @"Card color";
+                    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+                    break;
+            }
             break;
         case 1: {
             CardDeck *cardDeck = [self.delegate.cardDecks deckByIndex:indexPath.row];
@@ -129,6 +142,30 @@ static NSString *CellIdentifier = @"SettingsCell";
     UISwitch *hideSwitch = (UISwitch *)sender;
     
     self.delegate.hideSelectedCard = hideSwitch.on;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 0:
+            switch (indexPath.row) {
+                case 1: {
+                    SettingsSelectColorViewController *controller;
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+                        controller = [[[SettingsSelectColorViewController alloc] initWithNibName:@"SettingsSelectColorView_iPhone" bundle:nil] autorelease];
+                    else
+                        controller = [[[SettingsSelectColorViewController alloc] initWithNibName:@"SettingsSelectColorView_iPhone" bundle:nil] autorelease];
+                    
+                    controller.delegate = self;
+                    controller.settingsDelegate = self.delegate;
+                    
+                    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+                    [self presentModalViewController:controller animated:YES];
+                    break;
+                }
+            }
+            break;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

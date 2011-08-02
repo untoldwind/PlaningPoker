@@ -41,6 +41,9 @@
 		8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */; };
 		8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */; };
 		8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */; };
+		886D89C213E87260008EA690 /* SettingsSelectColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886D89C013E87260008EA690 /* SettingsSelectColorViewController.m */; };
+		886D89C513E872A2008EA690 /* SettingsSelectColorView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886D89C413E872A2008EA690 /* SettingsSelectColorView_iPhone.xib */; };
+		886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 886D89C713E87885008EA690 /* CardBackgrounds.m */; };
 		887D7B4613E74D4D0034BB10 /* CardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* CardBackground.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,11 @@
 		8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPhone.xib; path = iPhone/SettingsView_iPhone.xib; sourceTree = "<group>"; };
 		8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPad.xib; path = iPad/SettingsView_iPad.xib; sourceTree = "<group>"; };
+		886D89BF13E87260008EA690 /* SettingsSelectColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSelectColorViewController.h; sourceTree = "<group>"; };
+		886D89C013E87260008EA690 /* SettingsSelectColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSelectColorViewController.m; sourceTree = "<group>"; };
+		886D89C413E872A2008EA690 /* SettingsSelectColorView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsSelectColorView_iPhone.xib; path = iPhone/SettingsSelectColorView_iPhone.xib; sourceTree = "<group>"; };
+		886D89C613E87885008EA690 /* CardBackgrounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackgrounds.h; sourceTree = "<group>"; };
+		886D89C713E87885008EA690 /* CardBackgrounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackgrounds.m; sourceTree = "<group>"; };
 		887D7B4413E74D4D0034BB10 /* CardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackground.h; sourceTree = "<group>"; };
 		887D7B4513E74D4D0034BB10 /* CardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +175,8 @@
 			children = (
 				887D7B4413E74D4D0034BB10 /* CardBackground.h */,
 				887D7B4513E74D4D0034BB10 /* CardBackground.m */,
+				886D89C613E87885008EA690 /* CardBackgrounds.h */,
+				886D89C713E87885008EA690 /* CardBackgrounds.m */,
 				8826C17313E6E05E004982E7 /* CardDeck.h */,
 				8826C17413E6E05E004982E7 /* CardDeck.m */,
 				8826C17513E6E05E004982E7 /* CardDecks.h */,
@@ -177,6 +187,8 @@
 				8826C19613E6E4D8004982E7 /* CardHiddenViewController.m */,
 				8839A79B13E6FE9B00E5FC13 /* SettingsViewController.h */,
 				8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */,
+				886D89BF13E87260008EA690 /* SettingsSelectColorViewController.h */,
+				886D89C013E87260008EA690 /* SettingsSelectColorViewController.m */,
 				8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */,
 				8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */,
 				8826C13713E6DE2E004982E7 /* iPhone */,
@@ -208,6 +220,7 @@
 				8826C19113E6E4AE004982E7 /* CardDeckView_iPhone.xib */,
 				8826C19E13E6F3B6004982E7 /* CardHiddenView_iPhone.xib */,
 				8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */,
+				886D89C413E872A2008EA690 /* SettingsSelectColorView_iPhone.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -329,6 +342,7 @@
 				8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */,
 				8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */,
 				8838F81313E86C860031A065 /* oc-logo.png in Resources */,
+				886D89C513E872A2008EA690 /* SettingsSelectColorView_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +388,8 @@
 				8826C19713E6E4D8004982E7 /* CardHiddenViewController.m in Sources */,
 				8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */,
 				887D7B4613E74D4D0034BB10 /* CardBackground.m in Sources */,
+				886D89C213E87260008EA690 /* SettingsSelectColorViewController.m in Sources */,
+				886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

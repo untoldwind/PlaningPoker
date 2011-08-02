@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #include "CardDecks.h"
+#import "SettingsSelectColorViewController.h"
 
 @class SettingsViewController;
 
@@ -17,12 +18,16 @@
 
 @property (nonatomic, readonly) CardDecks *cardDecks;
 @property (nonatomic, readonly) CardDeck *currentDeck;
+@property (nonatomic, readonly) CardBackgrounds *cardBackgrounds;
+@property (nonatomic, readonly) CardBackground *currentCardBackground;
 @property (nonatomic) BOOL hideSelectedCard;
 
-- (IBAction)setCurrentDeckIndex:(NSInteger)deckIndex;
+- (void)setCurrentDeckIndex:(NSInteger)deckIndex;
+- (void)setCurrentBackgroundIndex:(NSInteger)backgroundIndex;
 @end
 
-@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SettingsSelectColorViewControllerDelegate> {
+    @private
     NSInteger selectedDeckIndex;
 }
 

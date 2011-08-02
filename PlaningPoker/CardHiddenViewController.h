@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CardBackground.h"
+
 @class CardHiddenViewController;
 
 @protocol CardHiddenViewControllerDelegate 
 - (void)cardHiddenFinished:(CardHiddenViewController *)controller;
 
 @property (nonatomic) BOOL hideSelectedCard;
+@property (nonatomic, readonly) CardBackground *currentCardBackground;
 
 @end
 

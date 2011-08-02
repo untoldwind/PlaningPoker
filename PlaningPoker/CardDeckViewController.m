@@ -15,6 +15,8 @@
 @synthesize cardButtons = _cardButtons;
 @synthesize cardDecks = _cardDecks;
 @synthesize currentDeck = _currentDeck;
+@synthesize currentCardBackground = _currentCardBackground;
+@synthesize cardBackgrounds = _cardBackgrounds;
 
 - (IBAction)selectCard:(id)sender
 {
@@ -81,8 +83,6 @@
             button.hidden = NO;
             id cardValue = [self.currentDeck.cardValues objectAtIndex:button.tag];
             
-            [button setBackgroundImage:[CardBackground normal:button.frame.size] forState:UIControlStateNormal];
-             
             if ( [cardValue isKindOfClass:[NSString class]] ) {
                 [button setTitle:cardValue
                         forState:UIControlStateNormal];
@@ -97,6 +97,22 @@
         }
     } 
 }
+
+- (void)setCurrentBackgroundIndex:(NSInteger)backgroundIndex
+{
+    if (_currentCardBackground != nil) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setInteger:backgroundIndex forKey:@"activeCardBackground"];
+        [userDefaults synchronize];        
+    }
+
+    _currentCardBackground = [self.cardBackgrounds backgroundByIndex:backgroundIndex];
+
+    for (UIButton *button in self.cardButtons) {
+        [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size] forState:UIControlStateNormal];        
+    }
+}
+
 
 - (BOOL)hideSelectedCard
 {
@@ -137,20 +153,25 @@
     NSDictionary *initDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [NSNumber numberWithBool:YES], @"hideSelectedCard", 
                                   [NSNumber numberWithInt:1], @"activeCardDeck",
+                                  [NSNumber numberWithInt:0], @"activeCardBackground",
                                   nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults registerDefaults:initDefaults];
 
     _cardDecks = [[CardDecks alloc] init];    
+    _cardBackgrounds = [[CardBackgrounds alloc] init];
+    
     self.hideSelectedCard = [userDefaults boolForKey:@"hideSelectedCard"];
-    [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardDeck"]];
+    [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardBackground"]];
+    [self setCurrentBackgroundIndex:[userDefaults integerForKey:@""]];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     [_cardDecks release];
+    [_cardBackgrounds release];
     self.cardButtons = nil;
 }
 

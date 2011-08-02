@@ -10,7 +10,31 @@
 
 @implementation CardBackground
 
-+ (UIImage *)normal:(CGSize) size
+@synthesize name = _name;
+
++ (CardBackground *)withName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b
+{
+    return [[[CardBackground alloc] initWithName:name borderR:border_r borderG:border_g borderB:border_b centerR:center_r centerG:center_g centerB:center_b] autorelease];
+}
+
+- (id)initWithName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b
+{
+    self = [super init];
+    if ( self ) {
+        _name = [name retain];
+        _border_r = border_r; _border_g = border_g; _border_b = border_b;
+        _center_r = center_r; _center_g = center_g; _center_b = center_b;
+    }
+    return self;
+}
+
+-(void)dealloc
+{
+    [_name release];
+    [super dealloc];
+}
+
+- (UIImage *)normal:(CGSize) size
 {
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -46,9 +70,9 @@
     size_t num_locations = 3;
     CGFloat locations[3] = { 0.0, 0.5, 1.0 };
     CGFloat components[12] = {
-        0.8, 0.4, 0.1, 1.0,
-        0.9, 0.5, 0.2, 1.0,
-        0.8, 0.4, 0.1, 1.0 };
+        _border_r, _border_g, _border_b, 1.0,
+        _center_r, _center_g, _center_b, 1.0,
+        _border_r, _border_g, _border_b, 1.0, };
     
     colorspace = CGColorSpaceCreateDeviceRGB();
     gradient = CGGradientCreateWithColorComponents (colorspace, components,
@@ -64,7 +88,7 @@
     return img;
 }
 
-+ (UIImage *)hidden:(CGSize) size
+- (UIImage *)hidden:(CGSize) size
 {
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -98,10 +122,10 @@
     size_t num_locations = 3;
     CGFloat locations[3] = { 0.0, 0.5, 1.0 };
     CGFloat components[12] = {
-        0.8, 0.4, 0.1, 1.0,
-        0.9, 0.5, 0.2, 1.0,
-        0.8, 0.4, 0.1, 1.0 };
-    
+        _border_r, _border_g, _border_b, 1.0,
+        _center_r, _center_g, _center_b, 1.0,
+        _border_r, _border_g, _border_b, 1.0, };
+
     colorspace = CGColorSpaceCreateDeviceRGB();
     gradient = CGGradientCreateWithColorComponents (colorspace, components,
                                                     locations, num_locations);

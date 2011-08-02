@@ -11,6 +11,7 @@
 #import "CardDecks.h"
 #import "CardHiddenViewController.h"
 #import "SettingsViewController.h"
+#import "CardBackgrounds.h"
 
 @interface CardDeckViewController : UIViewController <CardHiddenViewControllerDelegate, SettingsViewControllerDelegate> {
     @private 
@@ -19,10 +20,13 @@
 
 @property (nonatomic, readonly) CardDecks *cardDecks;
 @property (nonatomic, readonly) CardDeck *currentDeck;
+@property (nonatomic, readonly) CardBackgrounds *cardBackgrounds;
+@property (nonatomic, readonly) CardBackground *currentCardBackground;
 @property (nonatomic) BOOL hideSelectedCard;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 - (void)setCurrentDeckIndex:(NSInteger)deckIndex;
+- (void)setCurrentBackgroundIndex:(NSInteger)backgroundIndex;
 - (IBAction)selectCard:(id)sender;
 - (IBAction)settings:(id)sender;
 
