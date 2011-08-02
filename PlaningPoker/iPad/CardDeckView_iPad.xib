@@ -70,10 +70,6 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 						</object>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="494744666">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">card_medium_background.png</string>
-						</object>
 					</object>
 					<object class="IBUIButton" id="423727949">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -94,7 +90,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="761421381">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -115,7 +110,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="244881901">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -136,7 +130,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="240879332">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -157,7 +150,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="50988456">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -178,7 +170,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="396821385">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -199,7 +190,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="826760757">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -220,7 +210,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="968287169">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -241,7 +230,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="745820787">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -262,7 +250,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="485851166">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -283,7 +270,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="435365694">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -304,7 +290,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="103837736">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -325,7 +310,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="796120752">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -346,7 +330,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="82198814">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -367,7 +350,6 @@
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
-						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="851976100">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -375,6 +357,7 @@
 						<string key="NSFrame">{{730, 945}, {18, 19}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:237</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -955,10 +938,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">card_medium_background.png</string>
-			<string key="NS.object.0">{175, 230}</string>
-		</object>
 		<string key="IBCocoaTouchPluginVersion">534</string>
 	</data>
 </archive>

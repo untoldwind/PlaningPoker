@@ -37,13 +37,7 @@
 		8826C19713E6E4D8004982E7 /* CardHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8826C19613E6E4D8004982E7 /* CardHiddenViewController.m */; };
 		8826C19D13E6F3A1004982E7 /* CardHiddenView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C19C13E6F3A1004982E7 /* CardHiddenView_iPad.xib */; };
 		8826C19F13E6F3B7004982E7 /* CardHiddenView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8826C19E13E6F3B6004982E7 /* CardHiddenView_iPhone.xib */; };
-		8826C1A513E6F7D6004982E7 /* card_big_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C1A213E6F7D6004982E7 /* card_big_background.png */; };
-		8826C1A613E6F7D6004982E7 /* card_big_hidden.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C1A313E6F7D6004982E7 /* card_big_hidden.png */; };
-		8826C1A713E6F7D6004982E7 /* card_small_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8826C1A413E6F7D6004982E7 /* card_small_background.png */; };
 		8838F81313E86C860031A065 /* oc-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8838F81213E86C860031A065 /* oc-logo.png */; };
-		8839A79613E6FC7800E5FC13 /* card_medium_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839A79513E6FC7800E5FC13 /* card_medium_background.png */; };
-		8839A79813E6FDBD00E5FC13 /* card_huge_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839A79713E6FDBD00E5FC13 /* card_huge_background.png */; };
-		8839A79A13E6FE2A00E5FC13 /* card_huge_hidden.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839A79913E6FE2A00E5FC13 /* card_huge_hidden.png */; };
 		8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */; };
 		8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */; };
 		8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */; };
@@ -100,13 +94,7 @@
 		8826C19613E6E4D8004982E7 /* CardHiddenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardHiddenViewController.m; sourceTree = "<group>"; };
 		8826C19C13E6F3A1004982E7 /* CardHiddenView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardHiddenView_iPad.xib; path = iPad/CardHiddenView_iPad.xib; sourceTree = "<group>"; };
 		8826C19E13E6F3B6004982E7 /* CardHiddenView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardHiddenView_iPhone.xib; path = iPhone/CardHiddenView_iPhone.xib; sourceTree = "<group>"; };
-		8826C1A213E6F7D6004982E7 /* card_big_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_big_background.png; path = iPhone/card_big_background.png; sourceTree = "<group>"; };
-		8826C1A313E6F7D6004982E7 /* card_big_hidden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_big_hidden.png; path = iPhone/card_big_hidden.png; sourceTree = "<group>"; };
-		8826C1A413E6F7D6004982E7 /* card_small_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_small_background.png; path = iPhone/card_small_background.png; sourceTree = "<group>"; };
 		8838F81213E86C860031A065 /* oc-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oc-logo.png"; sourceTree = "<group>"; };
-		8839A79513E6FC7800E5FC13 /* card_medium_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_medium_background.png; path = iPad/card_medium_background.png; sourceTree = "<group>"; };
-		8839A79713E6FDBD00E5FC13 /* card_huge_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_huge_background.png; path = iPad/card_huge_background.png; sourceTree = "<group>"; };
-		8839A79913E6FE2A00E5FC13 /* card_huge_hidden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_huge_hidden.png; path = iPad/card_huge_hidden.png; sourceTree = "<group>"; };
 		8839A79B13E6FE9B00E5FC13 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		8839A7A013E6FF2500E5FC13 /* SettingsView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPhone.xib; path = iPhone/SettingsView_iPhone.xib; sourceTree = "<group>"; };
@@ -212,9 +200,6 @@
 		8826C13713E6DE2E004982E7 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				8826C1A213E6F7D6004982E7 /* card_big_background.png */,
-				8826C1A313E6F7D6004982E7 /* card_big_hidden.png */,
-				8826C1A413E6F7D6004982E7 /* card_small_background.png */,
 				8826C17C13E6E08D004982E7 /* coffee_big.png */,
 				8826C17D13E6E08D004982E7 /* coffee.png */,
 				8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */,
@@ -230,9 +215,6 @@
 		8826C13E13E6DE2E004982E7 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				8839A79913E6FE2A00E5FC13 /* card_huge_hidden.png */,
-				8839A79713E6FDBD00E5FC13 /* card_huge_background.png */,
-				8839A79513E6FC7800E5FC13 /* card_medium_background.png */,
 				8826C13F13E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.h */,
 				8826C14013E6DE2E004982E7 /* PlaningPokerAppDelegate_iPad.m */,
 				8826C14213E6DE2E004982E7 /* MainWindow_iPad.xib */,
@@ -344,12 +326,6 @@
 				8826C19413E6E4B7004982E7 /* CardDeckView_iPad.xib in Resources */,
 				8826C19D13E6F3A1004982E7 /* CardHiddenView_iPad.xib in Resources */,
 				8826C19F13E6F3B7004982E7 /* CardHiddenView_iPhone.xib in Resources */,
-				8826C1A513E6F7D6004982E7 /* card_big_background.png in Resources */,
-				8826C1A613E6F7D6004982E7 /* card_big_hidden.png in Resources */,
-				8826C1A713E6F7D6004982E7 /* card_small_background.png in Resources */,
-				8839A79613E6FC7800E5FC13 /* card_medium_background.png in Resources */,
-				8839A79813E6FDBD00E5FC13 /* card_huge_background.png in Resources */,
-				8839A79A13E6FE2A00E5FC13 /* card_huge_hidden.png in Resources */,
 				8839A7A113E6FF2500E5FC13 /* SettingsView_iPhone.xib in Resources */,
 				8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */,
 				8838F81313E86C860031A065 /* oc-logo.png in Resources */,
