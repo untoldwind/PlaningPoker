@@ -25,11 +25,6 @@
     [self.delegate settingsFinished:self];
 }
 
-- (void)settingsSelectColorFinished:(SettingsSelectColorViewController *)controller
-{
-    [self dismissModalViewControllerAnimated:YES];    
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -72,7 +67,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -82,6 +77,8 @@
             return @"General";
         case 1:
             return @"Card Deck";
+        case 2:
+            return @"Card Background";
     }
     return nil;
 }
@@ -90,9 +87,11 @@
 {
     switch(section) {
         case 0:
-            return 2;
+            return 1;
         case 1:
             return self.delegate.cardDecks.numberOfDecks;
+        case 2:
+            return self.delegate.cardBackgrounds.numberOfBackgrounds;
     }
     return 0;
 }
@@ -117,10 +116,6 @@ static NSString *CellIdentifier = @"SettingsCell";
                     cell.accessoryView = hideSwitch;
                     [hideSwitch release];
                     break;
-                case 1:
-                    cell.textLabel.text = @"Card color";
-                    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-                    break;
             }
             break;
         case 1: {
@@ -133,6 +128,17 @@ static NSString *CellIdentifier = @"SettingsCell";
             cell.textLabel.text = cardDeck.name;
             break;
         }
+        case 2: {
+            CardBackground *cardBackground = [self.delegate.cardBackgrounds backgroundByIndex:indexPath.row];
+            if ( cardBackground == self.delegate.currentCardBackground ) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                selectedBackgroundIndex = indexPath.row;
+            } else
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.text = cardBackground.name;
+            break;
+        }
+
     }
     return cell;
 }
@@ -142,30 +148,6 @@ static NSString *CellIdentifier = @"SettingsCell";
     UISwitch *hideSwitch = (UISwitch *)sender;
     
     self.delegate.hideSelectedCard = hideSwitch.on;
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.section) {
-        case 0:
-            switch (indexPath.row) {
-                case 1: {
-                    SettingsSelectColorViewController *controller;
-                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-                        controller = [[[SettingsSelectColorViewController alloc] initWithNibName:@"SettingsSelectColorView_iPhone" bundle:nil] autorelease];
-                    else
-                        controller = [[[SettingsSelectColorViewController alloc] initWithNibName:@"SettingsSelectColorView_iPhone" bundle:nil] autorelease];
-                    
-                    controller.delegate = self;
-                    controller.settingsDelegate = self.delegate;
-                    
-                    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-                    [self presentModalViewController:controller animated:YES];
-                    break;
-                }
-            }
-            break;
-    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,6 +174,24 @@ static NSString *CellIdentifier = @"SettingsCell";
             }
             break;
 
+        }
+        case 2: {
+            if ( indexPath.row == selectedBackgroundIndex )
+                return;
+            
+            NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:selectedBackgroundIndex inSection:2];
+            
+            UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];    
+            if (newCell.accessoryType == UITableViewCellAccessoryNone) {
+                newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+                selectedBackgroundIndex = indexPath.row;
+                [self.delegate setCurrentBackgroundIndex:selectedBackgroundIndex];
+            }
+            
+            UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldIndexPath];    
+            if (oldCell.accessoryType == UITableViewCellAccessoryCheckmark) {
+                oldCell.accessoryType = UITableViewCellAccessoryNone;
+            }            
         }
     }
 }

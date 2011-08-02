@@ -163,8 +163,8 @@
     _cardBackgrounds = [[CardBackgrounds alloc] init];
     
     self.hideSelectedCard = [userDefaults boolForKey:@"hideSelectedCard"];
-    [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardBackground"]];
-    [self setCurrentBackgroundIndex:[userDefaults integerForKey:@""]];
+    [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardDeck"]];
+    [self setCurrentBackgroundIndex:[userDefaults integerForKey:@"activeCardBackground"]];
 }
 
 - (void)viewDidUnload

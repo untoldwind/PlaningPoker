@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #include "CardDecks.h"
-#import "SettingsSelectColorViewController.h"
+#include "CardBackgrounds.h"
 
 @class SettingsViewController;
 
@@ -26,9 +26,10 @@
 - (void)setCurrentBackgroundIndex:(NSInteger)backgroundIndex;
 @end
 
-@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SettingsSelectColorViewControllerDelegate> {
+@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     @private
     NSInteger selectedDeckIndex;
+    NSInteger selectedBackgroundIndex;
 }
 
 @property (nonatomic, assign) id <SettingsViewControllerDelegate> delegate;
