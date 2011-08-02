@@ -59,15 +59,16 @@
 							<double key="NSSize">50</double>
 							<int key="NSfFlags">16</int>
 						</object>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">0</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="85848621">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="175241353">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="447778559">
 							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MC41AA</bytes>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="494744666">
 							<string key="NSClassName">NSImage</string>
@@ -88,10 +89,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">1</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="761421381">
@@ -108,10 +110,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">2</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="244881901">
@@ -128,10 +131,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">3</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="240879332">
@@ -148,10 +152,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">4</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="50988456">
@@ -168,10 +173,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">5</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="396821385">
@@ -188,10 +194,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">6</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="826760757">
@@ -208,10 +215,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">7</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="968287169">
@@ -228,10 +236,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">8</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="745820787">
@@ -248,10 +257,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">9</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="485851166">
@@ -268,10 +278,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">10</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="435365694">
@@ -288,10 +299,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">11</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="103837736">
@@ -308,10 +320,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">12</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="796120752">
@@ -328,10 +341,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">13</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="82198814">
@@ -348,10 +362,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="297539499"/>
+						<string key="IBUITitleShadowOffset">{2, 2}</string>
 						<string key="IBUINormalTitle">14</string>
 						<reference key="IBUIHighlightedTitleColor" ref="85848621"/>
 						<reference key="IBUINormalTitleColor" ref="85848621"/>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<reference key="IBUINormalTitleShadowColor" ref="447778559"/>
 						<reference key="IBUINormalBackgroundImage" ref="494744666"/>
 					</object>
 					<object class="IBUIButton" id="851976100">
@@ -360,7 +375,6 @@
 						<string key="NSFrame">{{730, 945}, {18, 19}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:237</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -378,7 +392,10 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="175241353"/>
+						<object class="NSColor" key="IBUINormalTitleShadowColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC41AA</bytes>
+						</object>
 					</object>
 				</object>
 				<string key="NSFrame">{{0, 20}, {768, 1004}}</string>
@@ -700,13 +717,7 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="673754178"/>
-							<reference ref="423727949"/>
-							<reference ref="761421381"/>
-							<reference ref="244881901"/>
 							<reference ref="240879332"/>
-							<reference ref="50988456"/>
-							<reference ref="396821385"/>
 							<reference ref="968287169"/>
 							<reference ref="745820787"/>
 							<reference ref="485851166"/>
@@ -714,8 +725,14 @@
 							<reference ref="103837736"/>
 							<reference ref="851976100"/>
 							<reference ref="82198814"/>
-							<reference ref="826760757"/>
 							<reference ref="796120752"/>
+							<reference ref="673754178"/>
+							<reference ref="423727949"/>
+							<reference ref="761421381"/>
+							<reference ref="244881901"/>
+							<reference ref="50988456"/>
+							<reference ref="396821385"/>
+							<reference ref="826760757"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

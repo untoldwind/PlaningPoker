@@ -22,36 +22,33 @@
     CGFloat minx = size.width * 0.05, maxx = size.width * 0.95;
     CGFloat miny = size.height * 0.05, maxy = size.height * 0.95;
 
-    CGContextBeginPath (context);
-    CGContextMoveToPoint(context, minx, miny + radius);
-    CGContextAddArcToPoint(context, minx, miny, minx + radius, miny, radius);
-    CGContextAddLineToPoint(context, maxx - radius, miny);
-    CGContextAddArcToPoint(context, maxx, miny, maxx, miny + radius, radius);
-    CGContextAddLineToPoint(context, maxx, maxy - radius);
-    CGContextAddArcToPoint(context, maxx, maxy, maxx - radius, maxy, radius);
-    CGContextAddLineToPoint(context, minx + radius, maxy);
-    CGContextAddArcToPoint(context, minx, maxy, minx, maxy - radius, radius);
-    CGContextClosePath(context);
-    CGContextDrawPath(context, kCGPathStroke);
+    CGMutablePathRef path = CGPathCreateMutable();
     
-    CGContextBeginPath (context);
-    CGContextMoveToPoint(context, minx, miny + radius);
-    CGContextAddArcToPoint(context, minx, miny, minx + radius, miny, radius);
-    CGContextAddLineToPoint(context, maxx - radius, miny);
-    CGContextAddArcToPoint(context, maxx, miny, maxx, miny + radius, radius);
-    CGContextAddLineToPoint(context, maxx, maxy - radius);
-    CGContextAddArcToPoint(context, maxx, maxy, maxx - radius, maxy, radius);
-    CGContextAddLineToPoint(context, minx + radius, maxy);
-    CGContextAddArcToPoint(context, minx, maxy, minx, maxy - radius, radius);
-    CGContextClosePath(context);
+    CGPathMoveToPoint(path, NULL, minx, miny + radius);
+    CGPathAddArcToPoint(path, NULL, minx, miny, minx + radius, miny, radius);
+    CGPathAddLineToPoint(path, NULL, maxx - radius, miny);
+    CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, miny + radius, radius);
+    CGPathAddLineToPoint(path, NULL, maxx, maxy - radius);
+    CGPathAddArcToPoint(path, NULL, maxx, maxy, maxx - radius, maxy, radius);
+    CGPathAddLineToPoint(path, NULL, minx + radius, maxy);
+    CGPathAddArcToPoint(path, NULL, minx, maxy, minx, maxy - radius, radius);
+    CGPathCloseSubpath(path);
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathStroke);
+
+    CGContextAddPath(context, path);
     CGContextClip(context);
+    
+    CGPathRelease(path);
     
     CGGradientRef gradient;    
     CGColorSpaceRef colorspace;    
-    size_t num_locations = 2;
-    CGFloat locations[2] = { 0.0, 1.0 };
-    CGFloat components[8] = { 1.0, 0.5, 0.4, 1.0,  // Start color
-        0.8, 0.8, 0.3, 1.0 }; // End color
+    size_t num_locations = 3;
+    CGFloat locations[3] = { 0.0, 0.5, 1.0 };
+    CGFloat components[12] = {
+        0.8, 0.4, 0.1, 1.0,
+        0.9, 0.5, 0.2, 1.0,
+        0.8, 0.4, 0.1, 1.0 };
     
     colorspace = CGColorSpaceCreateDeviceRGB();
     gradient = CGGradientCreateWithColorComponents (colorspace, components,
@@ -65,6 +62,78 @@
     UIGraphicsEndImageContext();
     
     return img;
+}
+
++ (UIImage *)hidden:(CGSize) size
+{
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetLineWidth(context, size.width * 0.05);
+    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
+    
+    CGFloat radius = size.width * 0.10;
+    CGFloat minx = size.width * 0.05, maxx = size.width * 0.95;
+    CGFloat miny = size.height * 0.05, maxy = size.height * 0.95;
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, minx, miny + radius);
+    CGPathAddArcToPoint(path, NULL, minx, miny, minx + radius, miny, radius);
+    CGPathAddLineToPoint(path, NULL, maxx - radius, miny);
+    CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, miny + radius, radius);
+    CGPathAddLineToPoint(path, NULL, maxx, maxy - radius);
+    CGPathAddArcToPoint(path, NULL, maxx, maxy, maxx - radius, maxy, radius);
+    CGPathAddLineToPoint(path, NULL, minx + radius, maxy);
+    CGPathAddArcToPoint(path, NULL, minx, maxy, minx, maxy - radius, radius);
+    CGPathCloseSubpath(path);
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathStroke);
+    
+    CGContextAddPath(context, path);
+    CGContextClip(context);
+    
+    CGGradientRef gradient;    
+    CGColorSpaceRef colorspace;    
+    size_t num_locations = 3;
+    CGFloat locations[3] = { 0.0, 0.5, 1.0 };
+    CGFloat components[12] = {
+        0.8, 0.4, 0.1, 1.0,
+        0.9, 0.5, 0.2, 1.0,
+        0.8, 0.4, 0.1, 1.0 };
+    
+    colorspace = CGColorSpaceCreateDeviceRGB();
+    gradient = CGGradientCreateWithColorComponents (colorspace, components,
+                                                    locations, num_locations);
+    CGContextDrawRadialGradient(context, gradient, CGPointMake(size.width * 0.5, size.height * 0.5), 0, 
+                                CGPointMake(size.width * 0.5, size.height * 0.5), 0.8 * size.width, 0);
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorspace);
+    
+    CGContextSetLineWidth(context, size.width * 0.03);
+    CGContextTranslateCTM(context, 0.1 * size.width, 0.1 * size.height);
+    CGContextScaleCTM(context, 0.8, 0.8);
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathStroke);
+
+    CGContextTranslateCTM(context, 0.15 * size.width, 0.15 * size.height);
+    CGContextScaleCTM(context, 0.7, 0.7);
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathStroke);
+    
+    CGContextTranslateCTM(context, 0.2 * size.width, 0.2 * size.height);
+    CGContextScaleCTM(context, 0.6, 0.6);
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathStroke);
+    
+    CGPathRelease(path);
+    
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;    
 }
 
 @end

@@ -12,4 +12,6 @@
 
 + (UIImage *) normal:(CGSize) size;
 
++ (UIImage *) hidden:(CGSize) size;
+
 @end
