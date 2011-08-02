@@ -22,6 +22,15 @@
         [cardBackgrounds addObject:[CardBackground withName:@"Blue" 
                                                     borderR:0.1 borderG:0.4 borderB:0.8 
                                                     centerR:0.2 centerG:0.5 centerB:0.9]];
+        [cardBackgrounds addObject:[CardBackground withName:@"Green" 
+                                                    borderR:0.4 borderG:0.8 borderB:0.1 
+                                                    centerR:0.5 centerG:0.9 centerB:0.2]];
+        [cardBackgrounds addObject:[CardBackground withName:@"Yellow" 
+                                                    borderR:0.8 borderG:0.8 borderB:0.1 
+                                                    centerR:0.9 centerG:0.9 centerB:0.2]];
+        [cardBackgrounds addObject:[CardBackground withName:@"Gray" 
+                                                    borderR:0.4 borderG:0.4 borderB:0.4 
+                                                    centerR:0.5 centerG:0.5 centerB:0.5]];
     }
     
     return self;
