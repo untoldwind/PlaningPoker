@@ -26,8 +26,8 @@
                                                     borderR:0.4 borderG:0.8 borderB:0.1 
                                                     centerR:0.5 centerG:0.9 centerB:0.2]];
         [cardBackgrounds addObject:[CardBackground withName:@"Yellow" 
-                                                    borderR:0.8 borderG:0.8 borderB:0.1 
-                                                    centerR:0.9 centerG:0.9 centerB:0.2]];
+                                                    borderR:0.7 borderG:0.7 borderB:0.1 
+                                                    centerR:0.8 centerG:0.8 centerB:0.2]];
         [cardBackgrounds addObject:[CardBackground withName:@"Gray" 
                                                     borderR:0.4 borderG:0.4 borderB:0.4 
                                                     centerR:0.5 centerG:0.5 centerB:0.5]];

@@ -96,17 +96,20 @@
     return 0;
 }
 
-static NSString *CellIdentifier = @"SettingsCell";
+static NSString *GeneralCellIdentifier = @"SettingsGeneralCell";
+static NSString *DeckCellIdentifier = @"SettingsDeckCell";
+static NSString *ColorCellIdentifier = @"SettingsColorCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
 
     switch (indexPath.section) {
-        case 0:
+        case 0: {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:GeneralCellIdentifier];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:GeneralCellIdentifier] autorelease];
+            }
+            
             switch (indexPath.row) {
                 case 0:
                     cell.textLabel.text = @"Hide selected card";
@@ -117,8 +120,14 @@ static NSString *CellIdentifier = @"SettingsCell";
                     [hideSwitch release];
                     break;
             }
-            break;
+            return cell;
+        }
         case 1: {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DeckCellIdentifier];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:DeckCellIdentifier] autorelease];
+            }
+            
             CardDeck *cardDeck = [self.delegate.cardDecks deckByIndex:indexPath.row];
             if ( cardDeck == self.delegate.currentDeck ) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -126,9 +135,14 @@ static NSString *CellIdentifier = @"SettingsCell";
             } else
                 cell.accessoryType = UITableViewCellAccessoryNone;
             cell.textLabel.text = cardDeck.name;
-            break;
+            return cell;;
         }
         case 2: {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ColorCellIdentifier];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ColorCellIdentifier] autorelease];
+            }
+            
             CardBackground *cardBackground = [self.delegate.cardBackgrounds backgroundByIndex:indexPath.row];
             if ( cardBackground == self.delegate.currentCardBackground ) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -136,11 +150,11 @@ static NSString *CellIdentifier = @"SettingsCell";
             } else
                 cell.accessoryType = UITableViewCellAccessoryNone;
             cell.textLabel.text = cardBackground.name;
-            break;
+            return cell;
         }
 
     }
-    return cell;
+    return nil;
 }
 
 - (void)hideSelectedCardChanged:(id)sender
