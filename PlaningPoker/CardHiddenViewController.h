@@ -16,7 +16,7 @@
 - (void)cardHiddenFinished:(CardHiddenViewController *)controller;
 
 @property (nonatomic) BOOL hideSelectedCard;
-@property (nonatomic, readonly) CardBackground *currentCardBackground;
+@property (nonatomic, readonly) id<CardBackground> currentCardBackground;
 
 @end
 

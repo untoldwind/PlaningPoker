@@ -143,7 +143,7 @@ static NSString *ColorCellIdentifier = @"SettingsColorCell";
                 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ColorCellIdentifier] autorelease];
             }
             
-            CardBackground *cardBackground = [self.delegate.cardBackgrounds backgroundByIndex:indexPath.row];
+            id <CardBackground> cardBackground = [self.delegate.cardBackgrounds backgroundByIndex:indexPath.row];
             if ( cardBackground == self.delegate.currentCardBackground ) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 selectedBackgroundIndex = indexPath.row;

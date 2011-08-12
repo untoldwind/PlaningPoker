@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) CardDecks *cardDecks;
 @property (nonatomic, readonly) CardDeck *currentDeck;
 @property (nonatomic, readonly) CardBackgrounds *cardBackgrounds;
-@property (nonatomic, readonly) CardBackground *currentCardBackground;
+@property (nonatomic, readonly) id <CardBackground> currentCardBackground;
 @property (nonatomic) BOOL hideSelectedCard;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *cardButtons;
 

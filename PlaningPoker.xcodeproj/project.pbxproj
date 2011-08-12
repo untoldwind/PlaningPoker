@@ -43,8 +43,9 @@
 		8839A7A313E6FF9F00E5FC13 /* SettingsView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */; };
 		8841834F13F5702D00930751 /* oc-act-logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841834E13F5702D00930751 /* oc-act-logo-small.png */; };
 		8841835113F570F800930751 /* oc-act-logo-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835013F570F800930751 /* oc-act-logo-big.png */; };
+		8841835313F571C700930751 /* oc-act-logo-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835213F571C700930751 /* oc-act-logo-large.png */; };
 		886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 886D89C713E87885008EA690 /* CardBackgrounds.m */; };
-		887D7B4613E74D4D0034BB10 /* CardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* CardBackground.m */; };
+		887D7B4613E74D4D0034BB10 /* SimpleCardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,10 +105,12 @@
 		8839A7A213E6FF9F00E5FC13 /* SettingsView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView_iPad.xib; path = iPad/SettingsView_iPad.xib; sourceTree = "<group>"; };
 		8841834E13F5702D00930751 /* oc-act-logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "oc-act-logo-small.png"; path = "iPhone/oc-act-logo-small.png"; sourceTree = "<group>"; };
 		8841835013F570F800930751 /* oc-act-logo-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "oc-act-logo-big.png"; path = "iPad/oc-act-logo-big.png"; sourceTree = "<group>"; };
+		8841835213F571C700930751 /* oc-act-logo-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oc-act-logo-large.png"; sourceTree = "<group>"; };
+		8841835413F57AB300930751 /* CardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackground.h; sourceTree = "<group>"; };
 		886D89C613E87885008EA690 /* CardBackgrounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackgrounds.h; sourceTree = "<group>"; };
 		886D89C713E87885008EA690 /* CardBackgrounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackgrounds.m; sourceTree = "<group>"; };
-		887D7B4413E74D4D0034BB10 /* CardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackground.h; sourceTree = "<group>"; };
-		887D7B4513E74D4D0034BB10 /* CardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackground.m; sourceTree = "<group>"; };
+		887D7B4413E74D4D0034BB10 /* SimpleCardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCardBackground.h; sourceTree = "<group>"; };
+		887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCardBackground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +175,9 @@
 		8826C12B13E6DE2E004982E7 /* PlaningPoker */ = {
 			isa = PBXGroup;
 			children = (
-				887D7B4413E74D4D0034BB10 /* CardBackground.h */,
-				887D7B4513E74D4D0034BB10 /* CardBackground.m */,
+				8841835413F57AB300930751 /* CardBackground.h */,
+				887D7B4413E74D4D0034BB10 /* SimpleCardBackground.h */,
+				887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */,
 				886D89C613E87885008EA690 /* CardBackgrounds.h */,
 				886D89C713E87885008EA690 /* CardBackgrounds.m */,
 				8826C17313E6E05E004982E7 /* CardDeck.h */,
@@ -188,6 +192,7 @@
 				8839A79C13E6FE9B00E5FC13 /* SettingsViewController.m */,
 				8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */,
 				8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */,
+				8841835213F571C700930751 /* oc-act-logo-large.png */,
 				8826C13713E6DE2E004982E7 /* iPhone */,
 				8826C13E13E6DE2E004982E7 /* iPad */,
 				8826C12C13E6DE2E004982E7 /* Supporting Files */,
@@ -342,6 +347,7 @@
 				8838F81313E86C860031A065 /* oc-logo.png in Resources */,
 				8841834F13F5702D00930751 /* oc-act-logo-small.png in Resources */,
 				8841835113F570F800930751 /* oc-act-logo-big.png in Resources */,
+				8841835313F571C700930751 /* oc-act-logo-large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +392,7 @@
 				8826C18B13E6E10E004982E7 /* CardDeckViewController.m in Sources */,
 				8826C19713E6E4D8004982E7 /* CardHiddenViewController.m in Sources */,
 				8839A79D13E6FE9B00E5FC13 /* SettingsViewController.m in Sources */,
-				887D7B4613E74D4D0034BB10 /* CardBackground.m in Sources */,
+				887D7B4613E74D4D0034BB10 /* SimpleCardBackground.m in Sources */,
 				886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

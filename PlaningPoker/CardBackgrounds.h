@@ -17,6 +17,6 @@
 
 - (NSInteger)numberOfBackgrounds;
 
-- (CardBackground *)backgroundByIndex:(NSInteger)index;
+- (id<CardBackground>)backgroundByIndex:(NSInteger)index;
 
 @end
