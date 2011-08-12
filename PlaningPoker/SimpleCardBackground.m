@@ -11,6 +11,7 @@
 @implementation SimpleCardBackground
 
 @synthesize name = _name;
+@synthesize textColor = _textColor;
 
 + (SimpleCardBackground *)withName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b
 {
@@ -22,6 +23,7 @@
     self = [super init];
     if ( self ) {
         _name = [name retain];
+        _textColor = [[UIColor whiteColor] retain];
         _cache = [[NSMutableDictionary dictionary] retain];
         _border_r = border_r; _border_g = border_g; _border_b = border_b;
         _center_r = center_r; _center_g = center_g; _center_b = center_b;
@@ -32,6 +34,7 @@
 -(void)dealloc
 {
     [_name release];
+    [_textColor release];
     [_cache release];
     [super dealloc];
 }
@@ -91,7 +94,6 @@
     
     normal = UIGraphicsGetImageFromCurrentImageContext();
     [_cache setObject:normal forKey:key];
-    [normal release];
     
     UIGraphicsEndImageContext();
     
@@ -171,7 +173,6 @@
     
     hidden = UIGraphicsGetImageFromCurrentImageContext();
     [_cache setObject:hidden forKey:key];
-    [hidden release];
     
     UIGraphicsEndImageContext();
     

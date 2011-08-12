@@ -59,6 +59,7 @@
     [self.cardButton setTitle:self.cardValueString forState:UIControlStateNormal];
     [self.cardButton setImage:self.cardValueImage forState:UIControlStateNormal];
     [self.cardButton setBackgroundImage:[self.delegate.currentCardBackground normal:self.cardButton.frame.size] forState:UIControlStateNormal];
+    [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateNormal];
     [self.revealButton setBackgroundImage:[self.delegate.currentCardBackground hidden:self.revealButton.frame.size] forState:UIControlStateNormal];
     if (!self.delegate.hideSelectedCard) {
         [self.revealButton setHidden:YES];

@@ -109,7 +109,8 @@
     _currentCardBackground = [self.cardBackgrounds backgroundByIndex:backgroundIndex];
 
     for (UIButton *button in self.cardButtons) {
-        [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size] forState:UIControlStateNormal];        
+        [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size] forState:UIControlStateNormal];
+        [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateNormal];
     }
 }
 

@@ -18,12 +18,7 @@
     NSMutableDictionary *_cache;
 }
 
-@property (nonatomic, readonly) NSString *name;
-
 + (SimpleCardBackground *)withName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b;
 - (id)initWithName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b;
-
-- (UIImage *) normal:(CGSize) size;
-- (UIImage *) hidden:(CGSize) size;
 
 @end
