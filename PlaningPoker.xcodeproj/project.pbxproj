@@ -45,6 +45,7 @@
 		8841835113F570F800930751 /* oc-act-logo-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835013F570F800930751 /* oc-act-logo-big.png */; };
 		8841835313F571C700930751 /* oc-act-logo-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835213F571C700930751 /* oc-act-logo-large.png */; };
 		8841835713F57D1500930751 /* OCCardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 8841835613F57D1500930751 /* OCCardBackground.m */; };
+		8841835A13F5869C00930751 /* CGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8841835913F5869B00930751 /* CGHelper.m */; };
 		886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 886D89C713E87885008EA690 /* CardBackgrounds.m */; };
 		887D7B4613E74D4D0034BB10 /* SimpleCardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,8 @@
 		8841835413F57AB300930751 /* CardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackground.h; sourceTree = "<group>"; };
 		8841835513F57D1500930751 /* OCCardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCardBackground.h; sourceTree = "<group>"; };
 		8841835613F57D1500930751 /* OCCardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCardBackground.m; sourceTree = "<group>"; };
+		8841835813F5869B00930751 /* CGHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGHelper.h; sourceTree = "<group>"; };
+		8841835913F5869B00930751 /* CGHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGHelper.m; sourceTree = "<group>"; };
 		886D89C613E87885008EA690 /* CardBackgrounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackgrounds.h; sourceTree = "<group>"; };
 		886D89C713E87885008EA690 /* CardBackgrounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackgrounds.m; sourceTree = "<group>"; };
 		887D7B4413E74D4D0034BB10 /* SimpleCardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCardBackground.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 		8826C12B13E6DE2E004982E7 /* PlaningPoker */ = {
 			isa = PBXGroup;
 			children = (
+				8841835813F5869B00930751 /* CGHelper.h */,
+				8841835913F5869B00930751 /* CGHelper.m */,
 				8841835413F57AB300930751 /* CardBackground.h */,
 				887D7B4413E74D4D0034BB10 /* SimpleCardBackground.h */,
 				887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */,
@@ -400,6 +405,7 @@
 				887D7B4613E74D4D0034BB10 /* SimpleCardBackground.m in Sources */,
 				886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */,
 				8841835713F57D1500930751 /* OCCardBackground.m in Sources */,
+				8841835A13F5869C00930751 /* CGHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

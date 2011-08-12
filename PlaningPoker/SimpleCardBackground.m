@@ -8,6 +8,8 @@
 
 #import "SimpleCardBackground.h"
 
+#import "CGHelper.h"
+
 @implementation SimpleCardBackground
 
 @synthesize name = _name;
@@ -53,21 +55,10 @@
     CGContextSetLineWidth(context, size.width * 0.05);
     CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
 
-    CGFloat radius = size.width * 0.10;
-    CGFloat minx = size.width * 0.05, maxx = size.width * 0.95;
-    CGFloat miny = size.height * 0.05, maxy = size.height * 0.95;
+    CGRect rect = CGRectMake(size.width * 0.05, size.height * 0.05, size.width * 0.9, size.height * 0.9 );
 
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    CGPathMoveToPoint(path, NULL, minx, miny + radius);
-    CGPathAddArcToPoint(path, NULL, minx, miny, minx + radius, miny, radius);
-    CGPathAddLineToPoint(path, NULL, maxx - radius, miny);
-    CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, miny + radius, radius);
-    CGPathAddLineToPoint(path, NULL, maxx, maxy - radius);
-    CGPathAddArcToPoint(path, NULL, maxx, maxy, maxx - radius, maxy, radius);
-    CGPathAddLineToPoint(path, NULL, minx + radius, maxy);
-    CGPathAddArcToPoint(path, NULL, minx, maxy, minx, maxy - radius, radius);
-    CGPathCloseSubpath(path);
+    CGPathRef path = CGHRoundedRectPath(rect, size.width * 0.10);
+
     CGContextAddPath(context, path);
     CGContextDrawPath(context, kCGPathStroke);
 
@@ -113,22 +104,11 @@
     
     CGContextSetLineWidth(context, size.width * 0.05);
     CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
+        
+    CGRect rect = CGRectMake(size.width * 0.05, size.height * 0.05, size.width * 0.9, size.height * 0.9 );
     
-    CGFloat radius = size.width * 0.10;
-    CGFloat minx = size.width * 0.05, maxx = size.width * 0.95;
-    CGFloat miny = size.height * 0.05, maxy = size.height * 0.95;
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    CGPathMoveToPoint(path, NULL, minx, miny + radius);
-    CGPathAddArcToPoint(path, NULL, minx, miny, minx + radius, miny, radius);
-    CGPathAddLineToPoint(path, NULL, maxx - radius, miny);
-    CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, miny + radius, radius);
-    CGPathAddLineToPoint(path, NULL, maxx, maxy - radius);
-    CGPathAddArcToPoint(path, NULL, maxx, maxy, maxx - radius, maxy, radius);
-    CGPathAddLineToPoint(path, NULL, minx + radius, maxy);
-    CGPathAddArcToPoint(path, NULL, minx, maxy, minx, maxy - radius, radius);
-    CGPathCloseSubpath(path);
+    CGPathRef path = CGHRoundedRectPath(rect, size.width * 0.10);
+
     CGContextAddPath(context, path);
     CGContextDrawPath(context, kCGPathStroke);
     

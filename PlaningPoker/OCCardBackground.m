@@ -8,6 +8,8 @@
 
 #import "OCCardBackground.h"
 
+#import "CGHelper.h"
+
 @implementation OCCardBackground
 
 @synthesize name = _name;
@@ -49,28 +51,29 @@
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    CGFloat radius = size.width * 0.10;
-    CGFloat minx = size.width * 0.05, maxx = size.width * 0.95;
-    CGFloat miny = size.height * 0.05, maxy = size.height * 0.95;
-
-    CGMutablePathRef path = CGPathCreateMutable();
+    CGRect rect = CGRectMake(size.width * 0.05, size.height * 0.05, size.width * 0.9, size.height * 0.9 );
     
-    CGPathMoveToPoint(path, NULL, minx, miny + radius);
-    CGPathAddArcToPoint(path, NULL, minx, miny, minx + radius, miny, radius);
-    CGPathAddLineToPoint(path, NULL, maxx - radius, miny);
-    CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, miny + radius, radius);
-    CGPathAddLineToPoint(path, NULL, maxx, maxy - radius);
-    CGPathAddArcToPoint(path, NULL, maxx, maxy, maxx - radius, maxy, radius);
-    CGPathAddLineToPoint(path, NULL, minx + radius, maxy);
-    CGPathAddArcToPoint(path, NULL, minx, maxy, minx, maxy - radius, radius);
-    CGPathCloseSubpath(path);
+    CGPathRef path = CGHRoundedRectPath(rect, size.width * 0.10);
+
     CGContextAddPath(context, path);
     CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);    
     CGContextFillPath(context);
-
     CGContextAddPath(context, path);
     CGContextClip(context);
+    CGPathRelease(path);
+
+    rect = CGRectMake(rect.origin.x + size.width * 0.04,
+                      rect.origin.y + size.width * 0.04,
+                      rect.size.width - size.width * 0.08,
+                      rect.size.height - size.width * 0.08);
     
+    path = CGHRoundedRectPath(rect, size.width * 0.08);
+
+    CGContextSetLineWidth(context, size.width * 0.03);
+    CGContextSetRGBStrokeColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);
+    
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathStroke);
     CGPathRelease(path);
         
     normal = UIGraphicsGetImageFromCurrentImageContext();
@@ -91,22 +94,11 @@
 
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
+        
+    CGRect rect = CGRectMake(size.width * 0.05, size.height * 0.05, size.width * 0.9, size.height * 0.9 );
     
-    CGFloat radius = size.width * 0.10;
-    CGFloat minx = size.width * 0.05, maxx = size.width * 0.95;
-    CGFloat miny = size.height * 0.05, maxy = size.height * 0.95;
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    CGPathMoveToPoint(path, NULL, minx, miny + radius);
-    CGPathAddArcToPoint(path, NULL, minx, miny, minx + radius, miny, radius);
-    CGPathAddLineToPoint(path, NULL, maxx - radius, miny);
-    CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, miny + radius, radius);
-    CGPathAddLineToPoint(path, NULL, maxx, maxy - radius);
-    CGPathAddArcToPoint(path, NULL, maxx, maxy, maxx - radius, maxy, radius);
-    CGPathAddLineToPoint(path, NULL, minx + radius, maxy);
-    CGPathAddArcToPoint(path, NULL, minx, maxy, minx, maxy - radius, radius);
-    CGPathCloseSubpath(path);
+    CGPathRef path = CGHRoundedRectPath(rect, size.width * 0.10);
+
     CGContextAddPath(context, path);
     CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);    
     CGContextFillPath(context);
