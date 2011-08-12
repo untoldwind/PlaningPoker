@@ -14,6 +14,7 @@
 
 @synthesize name = _name;
 @synthesize textColor = _textColor;
+@synthesize shadowColor = _shadowColor;
 
 + (SimpleCardBackground *)withName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b
 {
@@ -26,6 +27,7 @@
     if ( self ) {
         _name = [name retain];
         _textColor = [[UIColor whiteColor] retain];
+        _shadowColor = [[UIColor darkGrayColor] retain];
         _cache = [[NSMutableDictionary dictionary] retain];
         _border_r = border_r; _border_g = border_g; _border_b = border_b;
         _center_r = center_r; _center_g = center_g; _center_b = center_b;
@@ -37,6 +39,7 @@
 {
     [_name release];
     [_textColor release];
+    [_shadowColor release];
     [_cache release];
     [super dealloc];
 }

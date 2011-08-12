@@ -9,3 +9,5 @@
 #import <Foundation/Foundation.h>
 
 CGPathRef CGHRoundedRectPath(CGRect rect, CGFloat cornerRadius);
+CGPathRef CGHRoundedRectPathWithCutEdge(CGRect rect, CGFloat cornerRadius, CGFloat cutSize);
+CGPathRef CGHTriangle(CGPoint p1, CGPoint p2, CGPoint p3);

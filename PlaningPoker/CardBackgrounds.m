@@ -19,7 +19,7 @@
     if (self) {
         cardBackgrounds = [[NSMutableArray alloc] initWithCapacity:6];
         
-        [cardBackgrounds addObject:[OCCardBackground withName:@"OC"]];
+        [cardBackgrounds addObject:[OCCardBackground withName:@"OC White"]];
         [cardBackgrounds addObject:[SimpleCardBackground withName:@"Orange" 
                                                    borderR:0.8 borderG:0.4 borderB:0.1 
                                                    centerR:0.9 centerG:0.5 centerB:0.2]];

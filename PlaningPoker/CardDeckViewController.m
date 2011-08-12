@@ -118,6 +118,9 @@
     for (UIButton *button in self.cardButtons) {
         [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size] forState:UIControlStateNormal];
         [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateNormal];
+        [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateHighlighted];
+        [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateNormal];
+        [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateHighlighted];
     }
 }
 

@@ -10,10 +10,10 @@
 
 @protocol CardBackground
 
+@property (nonatomic, readonly) BOOL inverted;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) UIColor *textColor;
-
-- (BOOL)inverted;
+@property (nonatomic, readonly) UIColor *shadowColor;
 
 - (UIImage *) normal:(CGSize) size;
 - (UIImage *) hidden:(CGSize) size;
