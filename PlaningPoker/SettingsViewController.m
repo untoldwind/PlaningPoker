@@ -200,6 +200,7 @@ static NSString *ColorCellIdentifier = @"SettingsColorCell";
                 newCell.accessoryType = UITableViewCellAccessoryCheckmark;
                 selectedBackgroundIndex = indexPath.row;
                 [self.delegate setCurrentBackgroundIndex:selectedBackgroundIndex];
+                [self.delegate setCurrentDeckIndex:selectedDeckIndex];
             }
             
             UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldIndexPath];    

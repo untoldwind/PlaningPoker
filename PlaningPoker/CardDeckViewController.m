@@ -36,7 +36,10 @@
         controller.cardValueImage = nil;
     } else if ( [cardValue isKindOfClass:[NSArray class]] ) {
         controller.cardValueString = nil;
-        controller.cardValueImage = [cardValue objectAtIndex:1];
+        if ( _currentCardBackground.inverted )
+            controller.cardValueImage = [cardValue objectAtIndex:3];
+        else
+            controller.cardValueImage = [cardValue objectAtIndex:1];            
     }
     
     controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -91,8 +94,12 @@
             } else if ( [cardValue isKindOfClass:[NSArray class]] ) {
                 [button setTitle:nil
                         forState:UIControlStateNormal];
-                [button setImage:[cardValue objectAtIndex:0]
-                        forState:UIControlStateNormal];
+                if ( _currentCardBackground.inverted )
+                    [button setImage:[cardValue objectAtIndex:2]
+                            forState:UIControlStateNormal];
+                else
+                    [button setImage:[cardValue objectAtIndex:0]
+                            forState:UIControlStateNormal];
             }
         }
     } 
@@ -164,8 +171,8 @@
     _cardBackgrounds = [[CardBackgrounds alloc] init];
     
     self.hideSelectedCard = [userDefaults boolForKey:@"hideSelectedCard"];
-    [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardDeck"]];
     [self setCurrentBackgroundIndex:[userDefaults integerForKey:@"activeCardBackground"]];
+    [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardDeck"]];
 }
 
 - (void)viewDidUnload

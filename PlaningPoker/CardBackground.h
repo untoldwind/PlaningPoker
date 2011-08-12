@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) UIColor *textColor;
 
+- (BOOL)inverted;
+
 - (UIImage *) normal:(CGSize) size;
 - (UIImage *) hidden:(CGSize) size;
 

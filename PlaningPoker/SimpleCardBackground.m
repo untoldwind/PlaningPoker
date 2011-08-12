@@ -41,6 +41,11 @@
     [super dealloc];
 }
 
+- (BOOL)inverted
+{
+    return NO;
+}
+
 - (UIImage *)normal:(CGSize) size
 {
     NSString *key = [NSString stringWithFormat:@"normal_%f:%f", size.width, size.height];

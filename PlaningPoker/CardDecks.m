@@ -16,7 +16,12 @@
     if (self) {
         cardDecks = [[NSMutableArray alloc] initWithCapacity:3];
 
-        NSArray *coffee = [NSArray arrayWithObjects:[UIImage imageNamed:@"coffee.png"], [UIImage imageNamed:@"coffee_big.png"], nil];
+        NSArray *coffee = [NSArray arrayWithObjects:
+                           [UIImage imageNamed:@"coffee.png"],
+                           [UIImage imageNamed:@"coffee_big.png"], 
+                           [UIImage imageNamed:@"coffee_inv.png"],
+                           [UIImage imageNamed:@"coffee_inv_big.png"], 
+                           nil];
 
         [cardDecks addObject:[CardDeck 
                               withName:@"Regular"

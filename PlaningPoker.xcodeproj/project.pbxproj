@@ -46,6 +46,8 @@
 		8841835313F571C700930751 /* oc-act-logo-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835213F571C700930751 /* oc-act-logo-large.png */; };
 		8841835713F57D1500930751 /* OCCardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 8841835613F57D1500930751 /* OCCardBackground.m */; };
 		8841835A13F5869C00930751 /* CGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8841835913F5869B00930751 /* CGHelper.m */; };
+		8841835D13F5951E00930751 /* coffee_inv_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835B13F5951E00930751 /* coffee_inv_big.png */; };
+		8841835E13F5951E00930751 /* coffee_inv.png in Resources */ = {isa = PBXBuildFile; fileRef = 8841835C13F5951E00930751 /* coffee_inv.png */; };
 		886D89C813E87885008EA690 /* CardBackgrounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 886D89C713E87885008EA690 /* CardBackgrounds.m */; };
 		887D7B4613E74D4D0034BB10 /* SimpleCardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		8841835613F57D1500930751 /* OCCardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCardBackground.m; sourceTree = "<group>"; };
 		8841835813F5869B00930751 /* CGHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGHelper.h; sourceTree = "<group>"; };
 		8841835913F5869B00930751 /* CGHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGHelper.m; sourceTree = "<group>"; };
+		8841835B13F5951E00930751 /* coffee_inv_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_inv_big.png; sourceTree = "<group>"; };
+		8841835C13F5951E00930751 /* coffee_inv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_inv.png; sourceTree = "<group>"; };
 		886D89C613E87885008EA690 /* CardBackgrounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBackgrounds.h; sourceTree = "<group>"; };
 		886D89C713E87885008EA690 /* CardBackgrounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBackgrounds.m; sourceTree = "<group>"; };
 		887D7B4413E74D4D0034BB10 /* SimpleCardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCardBackground.h; sourceTree = "<group>"; };
@@ -203,6 +207,10 @@
 				8826C13413E6DE2E004982E7 /* PlaningPokerAppDelegate.h */,
 				8826C13513E6DE2E004982E7 /* PlaningPokerAppDelegate.m */,
 				8841835213F571C700930751 /* oc-act-logo-large.png */,
+				8826C17C13E6E08D004982E7 /* coffee_big.png */,
+				8826C17D13E6E08D004982E7 /* coffee.png */,
+				8841835B13F5951E00930751 /* coffee_inv_big.png */,
+				8841835C13F5951E00930751 /* coffee_inv.png */,
 				8826C13713E6DE2E004982E7 /* iPhone */,
 				8826C13E13E6DE2E004982E7 /* iPad */,
 				8826C12C13E6DE2E004982E7 /* Supporting Files */,
@@ -225,8 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				8841834E13F5702D00930751 /* oc-act-logo-small.png */,
-				8826C17C13E6E08D004982E7 /* coffee_big.png */,
-				8826C17D13E6E08D004982E7 /* coffee.png */,
 				8826C13813E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.h */,
 				8826C13913E6DE2E004982E7 /* PlaningPokerAppDelegate_iPhone.m */,
 				8826C13B13E6DE2E004982E7 /* MainWindow_iPhone.xib */,
@@ -358,6 +364,8 @@
 				8841834F13F5702D00930751 /* oc-act-logo-small.png in Resources */,
 				8841835113F570F800930751 /* oc-act-logo-big.png in Resources */,
 				8841835313F571C700930751 /* oc-act-logo-large.png in Resources */,
+				8841835D13F5951E00930751 /* coffee_inv_big.png in Resources */,
+				8841835E13F5951E00930751 /* coffee_inv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
