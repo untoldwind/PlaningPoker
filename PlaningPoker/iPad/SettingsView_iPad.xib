@@ -73,7 +73,7 @@
 					<object class="IBUITableView" id="613135644">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 44}, {768, 895}}</string>
+						<string key="NSFrame">{{0, 44}, {768, 842}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="214877397"/>
@@ -99,7 +99,7 @@
 					<object class="IBUIButton" id="214877397">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 947}, {728, 37}}</string>
+						<string key="NSFrame">{{20, 894}, {728, 110}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:237</string>
@@ -128,7 +128,7 @@
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">oc-logo.png</string>
+							<string key="NSResourceName">oc-act-logo-big.png</string>
 						</object>
 					</object>
 				</object>
@@ -374,8 +374,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">oc-logo.png</string>
-			<string key="NS.object.0">{76, 39}</string>
+			<string key="NS.key.0">oc-act-logo-big.png</string>
+			<string key="NS.object.0">{154, 100}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">534</string>
 	</data>
