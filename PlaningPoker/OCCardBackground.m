@@ -48,11 +48,11 @@
     return YES;
 }
 
--(UIImage *)normal:(CGSize)size
+-(UIImage *)normal:(CGSize)size cardValue:(NSString *)cardValue
 {
-    NSString *key = [NSString stringWithFormat:@"normal_%f:%f", size.width, size.height];
+    NSString *key = [NSString stringWithFormat:@"normal_%f:%f:%@", size.width, size.height, cardValue];
     UIImage *normal = [_cache objectForKey:key];
-    
+
     if ( normal != nil )
         return normal;
     
@@ -120,6 +120,15 @@
     CGContextDrawPath(context, kCGPathFillStroke);
     CGPathRelease(path);
     
+    if ( cardValue != nil ) {
+        UIFont *font = [UIFont fontWithName:@"Helvetica-Bold" size:size.width * 0.13];
+        CGSize fontSize = [cardValue sizeWithFont:font];
+        CGContextTranslateCTM(context, rect.origin.x - size.width * 0.01, rect.origin.y + fontSize.width - size.width * 0.13);
+        CGContextRotateCTM(context, -M_PI_2);
+        CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0); 
+        [cardValue drawAtPoint:CGPointZero withFont:font];
+    }
+                            
     normal = UIGraphicsGetImageFromCurrentImageContext();
     [_cache setObject:normal forKey:key];
     

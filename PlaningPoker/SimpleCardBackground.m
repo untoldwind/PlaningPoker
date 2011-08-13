@@ -49,7 +49,7 @@
     return NO;
 }
 
-- (UIImage *)normal:(CGSize) size
+- (UIImage *)normal:(CGSize) size cardValue:(NSString *)cardValue
 {
     NSString *key = [NSString stringWithFormat:@"normal_%f:%f", size.width, size.height];
     UIImage *normal = [_cache objectForKey:key];

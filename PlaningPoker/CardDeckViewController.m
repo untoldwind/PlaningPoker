@@ -91,9 +91,11 @@
                         forState:UIControlStateNormal];
                 [button setImage:nil
                         forState:UIControlStateNormal];
+                [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:cardValue] forState:UIControlStateNormal];
             } else if ( [cardValue isKindOfClass:[NSArray class]] ) {
                 [button setTitle:nil
                         forState:UIControlStateNormal];
+                [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:nil] forState:UIControlStateNormal];
                 if ( _currentCardBackground.inverted )
                     [button setImage:[cardValue objectAtIndex:2]
                             forState:UIControlStateNormal];
@@ -116,7 +118,6 @@
     _currentCardBackground = [self.cardBackgrounds backgroundByIndex:backgroundIndex];
 
     for (UIButton *button in self.cardButtons) {
-        [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size] forState:UIControlStateNormal];
         [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateNormal];
         [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateHighlighted];
         [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateNormal];
