@@ -12,10 +12,11 @@
 
 @interface OCCardBackground : NSObject <CardBackground> {
     @private
+    CGFloat _bg_r, _bg_g, _bg_b;
     NSMutableDictionary *_cache;
 }
 
-+ (OCCardBackground *)withName:(NSString *)name;
-- (id)initWithName:(NSString *)name;
++ (OCCardBackground *)withName:(NSString *)name bgR:(CGFloat)bg_r bgG:(CGFloat)bg_g bgB:(CGFloat)bg_b;
+- (id)initWithName:(NSString *)name bgR:(CGFloat)bg_r bgG:(CGFloat)bg_g bgB:(CGFloat)bg_b;
 
 @end

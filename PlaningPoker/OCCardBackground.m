@@ -16,16 +16,19 @@
 @synthesize textColor = _textColor;
 @synthesize shadowColor = _shadowColor;
 
-+ (OCCardBackground *)withName:(NSString *)name
++ (OCCardBackground *)withName:(NSString *)name bgR:(CGFloat)bg_r bgG:(CGFloat)bg_g bgB:(CGFloat)bg_b
 {
-    return [[[OCCardBackground alloc] initWithName:name] autorelease];
+    return [[[OCCardBackground alloc] initWithName:name bgR:bg_r bgG:bg_g bgB:bg_b] autorelease];
 }
 
-- (id)initWithName:(NSString *)name
+- (id)initWithName:(NSString *)name bgR:(CGFloat)bg_r bgG:(CGFloat)bg_g bgB:(CGFloat)bg_b
 {
     self = [super init];
     if (self) {
         _name = [name retain];
+        _bg_r = bg_r;
+        _bg_g = bg_g;
+        _bg_b = bg_b;
         _textColor = [[UIColor blackColor] retain];
         _shadowColor = [[UIColor lightGrayColor] retain];
         _cache = [[NSMutableDictionary dictionary] retain];
@@ -80,8 +83,8 @@
     
     path = CGHRoundedRectPath(rect, size.width * 0.08);
     CGContextSetLineWidth(context, size.width * 0.05);
-    CGContextSetRGBStrokeColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);    
-    CGContextSetRGBFillColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);    
+    CGContextSetRGBStrokeColor(context, _bg_r, _bg_g, _bg_b, 1.0);    
+    CGContextSetRGBFillColor(context, _bg_r, _bg_g, _bg_b, 1.0);    
     CGContextAddPath(context, path);
     CGContextDrawPath(context, kCGPathFillStroke);
     CGPathRelease(path);
@@ -167,7 +170,7 @@
     path = CGHRoundedRectPath(rect, size.width * 0.08);
     
     CGContextSetLineWidth(context, size.width * 0.01);
-    CGContextSetRGBStrokeColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);
+    CGContextSetRGBStrokeColor(context, _bg_r, _bg_g, _bg_b, 1.0);
     
     CGContextAddPath(context, path);
     CGContextDrawPath(context, kCGPathStroke);
