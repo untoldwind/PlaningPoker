@@ -62,7 +62,7 @@
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineJoin(context, kCGLineJoinRound);
     
-    CGRect rect = CGRectMake(size.width * 0.05, size.height * 0.05, size.width * 0.9, size.height * 0.9 );
+    CGRect rect = CGRectMake(size.width * 0.01, size.height * 0.01, size.width * 0.98, size.height * 0.98 );
     
     CGPathRef path = CGHRoundedRectPath(rect, size.width * 0.10);
 
@@ -72,39 +72,52 @@
     CGContextAddPath(context, path);
     CGContextClip(context);
     CGPathRelease(path);
-
-    path = CGHTriangle(CGPointMake(rect.origin.x + size.width * 0.05, rect.origin.y + size.width * 0.05),
-                       CGPointMake(rect.origin.x + size.width * 0.16, rect.origin.y + size.width * 0.05),
-                       CGPointMake(rect.origin.x + size.width * 0.05, rect.origin.y + size.width * 0.16));
-    CGContextSetLineWidth(context, size.width * 0.03);
+    
+    rect = CGRectMake(rect.origin.x + size.width * 0.06,
+                      rect.origin.y + size.width * 0.06,
+                      rect.size.width - size.width * 0.12,
+                      rect.size.height - size.width * 0.12);
+    
+    path = CGHRoundedRectPath(rect, size.width * 0.08);
+    CGContextSetLineWidth(context, size.width * 0.05);
     CGContextSetRGBStrokeColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);    
     CGContextSetRGBFillColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);    
     CGContextAddPath(context, path);
     CGContextDrawPath(context, kCGPathFillStroke);
     CGPathRelease(path);
-    
-    rect = CGRectMake(rect.origin.x + size.width * 0.04,
-                      rect.origin.y + size.width * 0.04,
-                      rect.size.width - size.width * 0.08,
-                      rect.size.height - size.width * 0.08);
-    
-    path = CGHRoundedRectPathWithCutEdge(rect, size.width * 0.08, size.width * 0.2);
-    CGContextSetLineWidth(context, size.width * 0.03);
-    CGContextSetRGBStrokeColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);    
-    CGContextAddPath(context, path);
-    CGContextDrawPath(context, kCGPathStroke);
-    CGPathRelease(path);
 
-    rect = CGRectMake(rect.origin.x + size.width * 0.015,
-                      rect.origin.y + size.width * 0.014,
-                      rect.size.width - size.width * 0.03,
-                      rect.size.height - size.width * 0.03);
+    rect = CGRectMake(rect.origin.x + size.width * 0.04,
+                      rect.origin.y + size.width * 0.18,
+                      rect.size.width - size.width * 0.08,
+                      rect.size.height - size.width * 0.22);
     
-    path = CGHRoundedRectPathWithCutEdge(rect, size.width * 0.08, size.width * 0.2);
+    path = CGHRoundedRectPathWithCutEdge(rect, size.width * 0.05, size.width * 0.3, size.width * 0.2);
     CGContextSetLineWidth(context, size.width * 0.01);
     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);    
+    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);    
     CGContextAddPath(context, path);
-    CGContextDrawPath(context, kCGPathStroke);
+    CGContextDrawPath(context, kCGPathFillStroke);
+    CGPathRelease(path);
+    
+    CGPoint points[] = {
+        CGPointMake(rect.origin.x, rect.origin.y - size.width * 0.14),
+        CGPointMake(rect.origin.x + rect.size.width, rect.origin.y - size.width * 0.14),
+        CGPointMake(rect.origin.x + rect.size.width, rect.origin.y - size.width * 0.03),
+        CGPointMake(rect.origin.x + size.width * 0.29, rect.origin.y - size.width * 0.03),
+        CGPointMake(rect.origin.x, rect.origin.y + size.width * 0.16),
+    };
+    CGFloat radii[] = {
+        size.width * 0.03,
+        size.width * 0.03,
+        0.0,
+        size.width * 0.03,
+        0.0
+    };
+    path = CGHRoundedPolygon(5, points, radii);
+    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);    
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);    
+    CGContextAddPath(context, path);
+    CGContextDrawPath(context, kCGPathFillStroke);
     CGPathRelease(path);
     
     normal = UIGraphicsGetImageFromCurrentImageContext();
@@ -126,7 +139,7 @@
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
         
-    CGRect rect = CGRectMake(size.width * 0.05, size.height * 0.05, size.width * 0.9, size.height * 0.9 );
+    CGRect rect = CGRectMake(size.width * 0.01, size.height * 0.01, size.width * 0.98, size.height * 0.98 );
     
     CGPathRef path = CGHRoundedRectPath(rect, size.width * 0.10);
     
@@ -144,7 +157,7 @@
     
     path = CGHRoundedRectPath(rect, size.width * 0.08);
     
-    CGContextSetLineWidth(context, size.width * 0.03);
+    CGContextSetLineWidth(context, size.width * 0.01);
     CGContextSetRGBStrokeColor(context, 0.0, 165.0 / 255.0, 222.0 / 255.0, 1.0);
     
     CGContextAddPath(context, path);
@@ -155,8 +168,8 @@
     UIImage *ocLogoDown = [UIImage imageWithCGImage:ocLogo.CGImage scale:1.0 orientation:UIImageOrientationDown];
     CGSize targetSize = CGSizeMake(size.width * 0.7, ocLogo.size.height * size.width * 0.7 / ocLogo.size.width);
     
-    [ocLogo drawInRect:CGRectMake(size.width * 0.15, size.height * 0.55, targetSize.width, targetSize.height)];    
-    [ocLogoDown drawInRect:CGRectMake(size.width * 0.15, size.height * 0.45 - targetSize.height, targetSize.width, targetSize.height)];
+    [ocLogoDown drawInRect:CGRectMake(size.width * 0.15, size.height * 0.55, targetSize.width, targetSize.height)];    
+    [ocLogo drawInRect:CGRectMake(size.width * 0.15, size.height * 0.45 - targetSize.height, targetSize.width, targetSize.height)];
     
     hidden = UIGraphicsGetImageFromCurrentImageContext();
     [_cache setObject:hidden forKey:key];
