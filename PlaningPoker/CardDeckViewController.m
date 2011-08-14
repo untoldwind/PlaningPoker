@@ -9,6 +9,7 @@
 #import "CardDeckViewController.h"
 
 #import "CardBackground.h"
+#import "CardSymbol.h"
 
 @implementation CardDeckViewController
 
@@ -33,13 +34,10 @@
     
     if ( [cardValue isKindOfClass:[NSString class]] ) {
         controller.cardValueString = cardValue;
-        controller.cardValueImage = nil;
-    } else if ( [cardValue isKindOfClass:[NSArray class]] ) {
+        controller.cardValueSymbol = nil;
+    } else if ( [cardValue isKindOfClass:[CardSymbol class]] ) {
         controller.cardValueString = nil;
-        if ( _currentCardBackground.inverted )
-            controller.cardValueImage = [cardValue objectAtIndex:3];
-        else
-            controller.cardValueImage = [cardValue objectAtIndex:1];            
+        controller.cardValueSymbol = cardValue;
     }
     
     controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -92,16 +90,11 @@
                 [button setImage:nil
                         forState:UIControlStateNormal];
                 [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:cardValue] forState:UIControlStateNormal];
-            } else if ( [cardValue isKindOfClass:[NSArray class]] ) {
+            } else if ( [cardValue isKindOfClass:[CardSymbol class]] ) {
                 [button setTitle:nil
                         forState:UIControlStateNormal];
                 [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:nil] forState:UIControlStateNormal];
-                if ( _currentCardBackground.inverted )
-                    [button setImage:[cardValue objectAtIndex:2]
-                            forState:UIControlStateNormal];
-                else
-                    [button setImage:[cardValue objectAtIndex:0]
-                            forState:UIControlStateNormal];
+                [button setImage:[cardValue imageWithSize:button.titleLabel.font.pointSize color:[button titleColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
             }
         }
     } 

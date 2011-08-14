@@ -7,6 +7,7 @@
 //
 
 #import "CardDecks.h"
+#import "CardSymbol.h"
 
 @implementation CardDecks
 
@@ -14,14 +15,9 @@
 {
     self = [super init];
     if (self) {
+        CardSymbol *coffee = [CardSymbol withNamed:@"coffee_mask.png"];
+        
         cardDecks = [[NSMutableArray alloc] initWithCapacity:3];
-
-        NSArray *coffee = [NSArray arrayWithObjects:
-                           [UIImage imageNamed:@"coffee.png"],
-                           [UIImage imageNamed:@"coffee_big.png"], 
-                           [UIImage imageNamed:@"coffee_inv.png"],
-                           [UIImage imageNamed:@"coffee_inv_big.png"], 
-                           nil];
 
         [cardDecks addObject:[CardDeck 
                               withName:@"Regular"

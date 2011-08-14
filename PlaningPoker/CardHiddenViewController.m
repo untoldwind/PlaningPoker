@@ -13,7 +13,7 @@
 
 @synthesize delegate = _delegate;
 @synthesize cardValueString = _cardValueString;
-@synthesize cardValueImage = _cardValueImage;
+@synthesize cardValueSymbol = _cardValueSymbol;
 
 @synthesize revealButton = _revealButton;
 @synthesize cardButton = _cardButton;
@@ -57,7 +57,11 @@
     [super viewDidLoad];
 
     [self.cardButton setTitle:self.cardValueString forState:UIControlStateNormal];
-    [self.cardButton setImage:self.cardValueImage forState:UIControlStateNormal];
+    if ( self.cardValueSymbol != nil ) 
+        [self.cardButton setImage:[self.cardValueSymbol imageWithSize:self.cardButton.titleLabel.font.pointSize color:[self.cardButton titleColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
+    else
+        [self.cardButton setImage:nil forState:UIControlStateNormal];
+        
     [self.cardButton setBackgroundImage:[self.delegate.currentCardBackground normal:self.cardButton.frame.size cardValue:self.cardValueString] forState:UIControlStateNormal];
     [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateNormal];
     [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateHighlighted];
