@@ -78,8 +78,6 @@
 {
     NSString *key = [NSString stringWithFormat:@"image_%f:%@:%f:%f:%@", size, color, shadowOffset.width, shadowOffset.height, shadowColor];
     UIImage *image = [_cache objectForKey:key];
-    CGFloat shadowMax = MAX(shadowOffset.width, shadowOffset.height);
-    NSLog(@"%f %f %@", shadowOffset.width, shadowOffset.height, shadowColor);
     if ( image != nil )
         return image;
     
@@ -97,6 +95,8 @@
                                         CGImageGetBitsPerPixel(maskRef),
                                         CGImageGetBytesPerRow(maskRef),
                                         CGImageGetDataProvider(maskRef), NULL, true);    
+    
+    CGFloat shadowMax = MAX(shadowOffset.width, shadowOffset.height);
     
     CGContextTranslateCTM(context, size - shadowMax, size - shadowMax);
     CGContextRotateCTM(context, M_PI);

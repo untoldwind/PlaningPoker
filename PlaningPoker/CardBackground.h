@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) UIColor *textColor;
 @property (nonatomic, readonly) UIColor *shadowColor;
 
-- (UIImage *) normal:(CGSize) size cardValue:(NSString *)cardValue;
+- (UIImage *) normal:(CGSize) size cardValue:(id)cardValue;
 - (UIImage *) hidden:(CGSize) size;
 
 @end

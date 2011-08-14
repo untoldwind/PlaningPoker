@@ -30,16 +30,8 @@
         controller = [[[CardHiddenViewController alloc] initWithNibName:@"CardHiddenView_iPad" bundle:nil] autorelease];
         
     controller.delegate = self;
-    id cardValue = [self.currentDeck.cardValues objectAtIndex:button.tag];
-    
-    if ( [cardValue isKindOfClass:[NSString class]] ) {
-        controller.cardValueString = cardValue;
-        controller.cardValueSymbol = nil;
-    } else if ( [cardValue isKindOfClass:[CardSymbol class]] ) {
-        controller.cardValueString = nil;
-        controller.cardValueSymbol = cardValue;
-    }
-    
+    controller.cardValue = [self.currentDeck.cardValues objectAtIndex:button.tag];
+        
     controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentModalViewController:controller animated:YES];
 }
@@ -89,16 +81,18 @@
                         forState:UIControlStateNormal];
                 [button setImage:nil
                         forState:UIControlStateNormal];
-                [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:cardValue] forState:UIControlStateNormal];
             } else if ( [cardValue isKindOfClass:[CardSymbol class]] ) {
                 [button setTitle:nil
                         forState:UIControlStateNormal];
-                [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:nil] forState:UIControlStateNormal];
                 [button setImage:[cardValue imageWithSize:button.titleLabel.font.pointSize 
                                                     color:[button titleColorForState:UIControlStateNormal]
                                              shadowOffset:button.titleLabel.shadowOffset
-                                              shadowColor:[button titleShadowColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
+                                              shadowColor:[button titleShadowColorForState:UIControlStateNormal]] 
+                        forState:UIControlStateNormal];
             }
+            [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size 
+                                                                cardValue:cardValue] 
+                              forState:UIControlStateNormal];
         }
     } 
 }

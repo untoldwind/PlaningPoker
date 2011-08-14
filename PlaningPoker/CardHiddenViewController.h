@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "CardBackground.h"
-#import "CardSymbol.h"
 
 @class CardHiddenViewController;
 
@@ -24,8 +23,7 @@
 @interface CardHiddenViewController : UIViewController
 
 @property (nonatomic, assign) id <CardHiddenViewControllerDelegate> delegate;
-@property (nonatomic, assign) NSString *cardValueString;
-@property (nonatomic, assign) CardSymbol *cardValueSymbol;
+@property (nonatomic, assign) id cardValue;
 
 @property (nonatomic, retain) IBOutlet UIButton *revealButton;
 @property (nonatomic, retain) IBOutlet UIButton *cardButton;

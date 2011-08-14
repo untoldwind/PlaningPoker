@@ -8,12 +8,12 @@
 
 #import "CardHiddenViewController.h"
 #import "CardBackground.h"
+#import "CardSymbol.h"
 
 @implementation CardHiddenViewController
 
 @synthesize delegate = _delegate;
-@synthesize cardValueString = _cardValueString;
-@synthesize cardValueSymbol = _cardValueSymbol;
+@synthesize cardValue = _cardValue;
 
 @synthesize revealButton = _revealButton;
 @synthesize cardButton = _cardButton;
@@ -55,21 +55,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+        
     [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateNormal];
     [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateHighlighted];
     [self.cardButton setTitleShadowColor:self.delegate.currentCardBackground.shadowColor forState:UIControlStateNormal];
-    [self.cardButton setTitleShadowColor:self.delegate.currentCardBackground.shadowColor forState:UIControlStateHighlighted];    
-    [self.cardButton setTitle:self.cardValueString forState:UIControlStateNormal];
-    if ( self.cardValueSymbol != nil ) 
-        [self.cardButton setImage:[self.cardValueSymbol imageWithSize:self.cardButton.titleLabel.font.pointSize 
-                                                                color:[self.cardButton titleColorForState:UIControlStateNormal]
-                                                         shadowOffset:self.cardButton.titleLabel.shadowOffset
-                                                          shadowColor:[self.cardButton titleShadowColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
-    else
+    [self.cardButton setTitleShadowColor:self.delegate.currentCardBackground.shadowColor forState:UIControlStateHighlighted];
+    
+    if ( [self.cardValue isKindOfClass:[NSString class]] ) {
+        [self.cardButton setTitle:self.cardValue forState:UIControlStateNormal];
         [self.cardButton setImage:nil forState:UIControlStateNormal];
+    } else if ( [self.cardValue isKindOfClass:[CardSymbol class]] ) {
+        [self.cardButton setTitle:nil forState:UIControlStateNormal];
+        [self.cardButton setImage:[self.cardValue imageWithSize:self.cardButton.titleLabel.font.pointSize 
+                                                            color:[self.cardButton titleColorForState:UIControlStateNormal]
+                                                    shadowOffset:self.cardButton.titleLabel.shadowOffset
+                                                     shadowColor:[self.cardButton titleShadowColorForState:UIControlStateNormal]] 
+                         forState:UIControlStateNormal];        
+    }
         
-    [self.cardButton setBackgroundImage:[self.delegate.currentCardBackground normal:self.cardButton.frame.size cardValue:self.cardValueString] forState:UIControlStateNormal];
+    [self.cardButton setBackgroundImage:[self.delegate.currentCardBackground normal:self.cardButton.frame.size 
+                                                                          cardValue:self.cardValue]
+                               forState:UIControlStateNormal];
     [self.revealButton setBackgroundImage:[self.delegate.currentCardBackground hidden:self.revealButton.frame.size] forState:UIControlStateNormal];
     if (!self.delegate.hideSelectedCard) {
         [self.revealButton setHidden:YES];

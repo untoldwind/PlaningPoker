@@ -9,6 +9,7 @@
 #import "OCCardBackground.h"
 
 #import "CGHelper.h"
+#import "CardSymbol.h"
 
 @implementation OCCardBackground
 
@@ -51,7 +52,7 @@
     return YES;
 }
 
--(UIImage *)normal:(CGSize)size cardValue:(NSString *)cardValue
+-(UIImage *)normal:(CGSize)size cardValue:(id)cardValue
 {
     NSString *key = [NSString stringWithFormat:@"normal_%f:%f:%@", size.width, size.height, cardValue];
     UIImage *normal = [_cache objectForKey:key];
@@ -124,12 +125,19 @@
     CGPathRelease(path);
     
     if ( cardValue != nil ) {
-        UIFont *font = [UIFont fontWithName:@"Helvetica-Bold" size:size.width * 0.13];
-        CGSize fontSize = [cardValue sizeWithFont:font];
-        CGContextTranslateCTM(context, rect.origin.x - size.width * 0.01, rect.origin.y + fontSize.width - size.width * 0.13);
-        CGContextRotateCTM(context, -M_PI_2);
-        CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0); 
-        [cardValue drawAtPoint:CGPointZero withFont:font];
+        if ( [cardValue isKindOfClass:[NSString class]] ) {
+            UIFont *font = [UIFont fontWithName:@"Helvetica-Bold" size:size.width * 0.13];
+            CGSize fontSize = [cardValue sizeWithFont:font];
+            CGContextTranslateCTM(context, rect.origin.x - size.width * 0.01, rect.origin.y + fontSize.width - size.width * 0.13);
+            CGContextRotateCTM(context, -M_PI_2);
+            CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0); 
+            [cardValue drawAtPoint:CGPointZero withFont:font];
+        } else if ( [cardValue isKindOfClass:[CardSymbol class]] ) {
+            UIImage *symbol = [cardValue imageWithSize:size.width * 0.13 
+                                                 color:[UIColor whiteColor]]; 
+            CGContextTranslateCTM(context, rect.origin.x, rect.origin.y - size.width * 0.13);
+            [symbol drawAtPoint:CGPointZero];
+        }
     }
                             
     normal = UIGraphicsGetImageFromCurrentImageContext();
