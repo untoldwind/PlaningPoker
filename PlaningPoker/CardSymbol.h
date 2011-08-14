@@ -19,5 +19,6 @@
 
 - (id)initWithImage:(UIImage *)image;
 - (UIImage *)imageWithSize:(CGFloat)size color:(UIColor *)color;
+- (UIImage *)imageWithSize:(CGFloat)size color:(UIColor *)color shadowOffset:(CGSize)shadowOffset shadowColor:(UIColor *)shadowColor;
 
 @end

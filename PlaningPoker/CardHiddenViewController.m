@@ -56,17 +56,20 @@
 {
     [super viewDidLoad];
 
-    [self.cardButton setTitle:self.cardValueString forState:UIControlStateNormal];
-    if ( self.cardValueSymbol != nil ) 
-        [self.cardButton setImage:[self.cardValueSymbol imageWithSize:self.cardButton.titleLabel.font.pointSize color:[self.cardButton titleColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
-    else
-        [self.cardButton setImage:nil forState:UIControlStateNormal];
-        
-    [self.cardButton setBackgroundImage:[self.delegate.currentCardBackground normal:self.cardButton.frame.size cardValue:self.cardValueString] forState:UIControlStateNormal];
     [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateNormal];
     [self.cardButton setTitleColor:self.delegate.currentCardBackground.textColor forState:UIControlStateHighlighted];
     [self.cardButton setTitleShadowColor:self.delegate.currentCardBackground.shadowColor forState:UIControlStateNormal];
     [self.cardButton setTitleShadowColor:self.delegate.currentCardBackground.shadowColor forState:UIControlStateHighlighted];    
+    [self.cardButton setTitle:self.cardValueString forState:UIControlStateNormal];
+    if ( self.cardValueSymbol != nil ) 
+        [self.cardButton setImage:[self.cardValueSymbol imageWithSize:self.cardButton.titleLabel.font.pointSize 
+                                                                color:[self.cardButton titleColorForState:UIControlStateNormal]
+                                                         shadowOffset:self.cardButton.titleLabel.shadowOffset
+                                                          shadowColor:[self.cardButton titleShadowColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
+    else
+        [self.cardButton setImage:nil forState:UIControlStateNormal];
+        
+    [self.cardButton setBackgroundImage:[self.delegate.currentCardBackground normal:self.cardButton.frame.size cardValue:self.cardValueString] forState:UIControlStateNormal];
     [self.revealButton setBackgroundImage:[self.delegate.currentCardBackground hidden:self.revealButton.frame.size] forState:UIControlStateNormal];
     if (!self.delegate.hideSelectedCard) {
         [self.revealButton setHidden:YES];

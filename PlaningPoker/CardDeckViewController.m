@@ -94,7 +94,10 @@
                 [button setTitle:nil
                         forState:UIControlStateNormal];
                 [button setBackgroundImage:[self.currentCardBackground normal:button.frame.size cardValue:nil] forState:UIControlStateNormal];
-                [button setImage:[cardValue imageWithSize:button.titleLabel.font.pointSize color:[button titleColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
+                [button setImage:[cardValue imageWithSize:button.titleLabel.font.pointSize 
+                                                    color:[button titleColorForState:UIControlStateNormal]
+                                             shadowOffset:button.titleLabel.shadowOffset
+                                              shadowColor:[button titleShadowColorForState:UIControlStateNormal]] forState:UIControlStateNormal];
             }
         }
     } 
