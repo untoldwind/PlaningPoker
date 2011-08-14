@@ -11,7 +11,6 @@
 @interface CardSymbol : NSObject {
     @private
     UIImage *_symbol;    
-    NSMutableDictionary *_cache;
 }
 
 + (CardSymbol *)withNamed:(NSString *)name;

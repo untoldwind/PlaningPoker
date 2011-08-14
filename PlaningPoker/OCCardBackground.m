@@ -32,7 +32,6 @@
         _bg_b = bg_b;
         _textColor = [[UIColor blackColor] retain];
         _shadowColor = [[UIColor lightGrayColor] retain];
-        _cache = [[NSMutableDictionary dictionary] retain];
     }
     
     return self;
@@ -43,7 +42,6 @@
     [_name release];
     [_textColor release];
     [_shadowColor release];
-    [_cache release];
     [super dealloc];
 }
 
@@ -54,12 +52,6 @@
 
 -(UIImage *)normal:(CGSize)size cardValue:(id)cardValue
 {
-    NSString *key = [NSString stringWithFormat:@"normal_%f:%f:%@", size.width, size.height, cardValue];
-    UIImage *normal = [_cache objectForKey:key];
-
-    if ( normal != nil )
-        return normal;
-    
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
 
@@ -139,9 +131,8 @@
             [symbol drawAtPoint:CGPointZero];
         }
     }
-                            
-    normal = UIGraphicsGetImageFromCurrentImageContext();
-    [_cache setObject:normal forKey:key];
+
+    UIImage *normal = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
@@ -150,12 +141,6 @@
 
 -(UIImage *)hidden:(CGSize)size
 {
-    NSString *key = [NSString stringWithFormat:@"hidden_%f:%f", size.width, size.height];
-    UIImage *hidden = [_cache objectForKey:key];
-    
-    if ( hidden != nil )
-        return hidden;
-
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
         
@@ -191,8 +176,7 @@
     [ocLogoDown drawInRect:CGRectMake(size.width * 0.15, size.height * 0.55, targetSize.width, targetSize.height)];    
     [ocLogo drawInRect:CGRectMake(size.width * 0.15, size.height * 0.45 - targetSize.height, targetSize.width, targetSize.height)];
     
-    hidden = UIGraphicsGetImageFromCurrentImageContext();
-    [_cache setObject:hidden forKey:key];
+    UIImage *hidden = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     

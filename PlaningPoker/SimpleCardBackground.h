@@ -14,8 +14,6 @@
     @private
     CGFloat _border_r, _border_g, _border_b;
     CGFloat _center_r, _center_g, _center_b;
-
-    NSMutableDictionary *_cache;
 }
 
 + (SimpleCardBackground *)withName:(NSString *)name borderR:(CGFloat)border_r borderG:(CGFloat)border_g borderB:(CGFloat)border_b centerR:(CGFloat)center_r centerG:(CGFloat)center_g centerB:(CGFloat)center_b;

@@ -25,7 +25,6 @@
     self = [super init];
     if (self) {
         _symbol = [image retain];
-        _cache = [[NSMutableDictionary dictionary] retain];
     }
     
     return self;
@@ -33,19 +32,12 @@
 
 - (void)dealloc
 {
-    [_cache release];
     [_symbol release];
     [super dealloc];
 }
 
 - (UIImage *)imageWithSize:(CGFloat)size color:(UIColor *)color
 {
-    NSString *key = [NSString stringWithFormat:@"image_%f:%@", size, color];
-    UIImage *image = [_cache objectForKey:key];
-    
-    if ( image != nil )
-        return image;
-
     CGRect rect = CGRectMake(0.0, 0.0, size, size);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -66,9 +58,8 @@
     
     CGImageRelease(mask);
     
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    [_cache setObject:image forKey:key];
-    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+
     UIGraphicsEndImageContext();
     
     return image;
@@ -76,11 +67,6 @@
 
 - (UIImage *)imageWithSize:(CGFloat)size color:(UIColor *)color shadowOffset:(CGSize)shadowOffset shadowColor:(UIColor *)shadowColor
 {
-    NSString *key = [NSString stringWithFormat:@"image_%f:%@:%f:%f:%@", size, color, shadowOffset.width, shadowOffset.height, shadowColor];
-    UIImage *image = [_cache objectForKey:key];
-    if ( image != nil )
-        return image;
-    
     CGRect rect = CGRectMake(0.0, 0.0, size, size);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -108,8 +94,7 @@
     CGImageRelease(mask);
     CGContextEndTransparencyLayer(context);
     
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    [_cache setObject:image forKey:key];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     

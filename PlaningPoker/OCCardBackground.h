@@ -13,7 +13,6 @@
 @interface OCCardBackground : NSObject <CardBackground> {
     @private
     CGFloat _bg_r, _bg_g, _bg_b;
-    NSMutableDictionary *_cache;
 }
 
 + (OCCardBackground *)withName:(NSString *)name bgR:(CGFloat)bg_r bgG:(CGFloat)bg_g bgB:(CGFloat)bg_b;

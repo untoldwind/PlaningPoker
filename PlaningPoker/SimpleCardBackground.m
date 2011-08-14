@@ -28,7 +28,6 @@
         _name = [name retain];
         _textColor = [[UIColor whiteColor] retain];
         _shadowColor = [[UIColor darkGrayColor] retain];
-        _cache = [[NSMutableDictionary dictionary] retain];
         _border_r = border_r; _border_g = border_g; _border_b = border_b;
         _center_r = center_r; _center_g = center_g; _center_b = center_b;
     }
@@ -40,7 +39,6 @@
     [_name release];
     [_textColor release];
     [_shadowColor release];
-    [_cache release];
     [super dealloc];
 }
 
@@ -51,12 +49,6 @@
 
 - (UIImage *)normal:(CGSize) size cardValue:(id)cardValue
 {
-    NSString *key = [NSString stringWithFormat:@"normal_%f:%f", size.width, size.height];
-    UIImage *normal = [_cache objectForKey:key];
-    
-    if ( normal != nil )
-        return normal;
-    
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -91,8 +83,7 @@
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorspace);
     
-    normal = UIGraphicsGetImageFromCurrentImageContext();
-    [_cache setObject:normal forKey:key];
+    UIImage *normal = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
@@ -101,12 +92,6 @@
 
 - (UIImage *)hidden:(CGSize) size
 {
-    NSString *key = [NSString stringWithFormat:@"hidden_%f:%f", size.width, size.height];
-    UIImage *hidden = [_cache objectForKey:key];
-    
-    if ( hidden != nil )
-        return hidden;
-    
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -159,8 +144,7 @@
     
     CGPathRelease(path);
     
-    hidden = UIGraphicsGetImageFromCurrentImageContext();
-    [_cache setObject:hidden forKey:key];
+    UIImage *hidden = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
