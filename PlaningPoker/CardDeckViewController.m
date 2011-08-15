@@ -42,7 +42,6 @@
         
     _frontLayer.frame = button.frame;
     _frontLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
-    _frontLayer.hidden = NO;
 
     UIGraphicsEndImageContext();
     
@@ -51,18 +50,17 @@
     
     _backLayer.frame = button.frame;
     _backLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
-    _backLayer.hidden = NO;
     
     UIGraphicsEndImageContext();
     
     [CATransaction commit];
 
+    self.animationView.hidden = NO;
     [CATransaction begin];
     [CATransaction setCompletionBlock:^{
         [self presentModalViewController:controller animated:NO];
         _frontLayer.frame = button.frame;
-        _frontLayer.hidden = YES;
-        _backLayer.hidden = YES;
+        self.animationView.hidden = YES;
     }];
     
     CAAnimation *front = CAHFlipResizeAnimation(0.5f, 0.0, -M_PI, button.frame, controller.view.bounds);
@@ -87,8 +85,6 @@
     
     _backLayer.frame = controller.view.bounds;
     _backLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
-    _backLayer.hidden = NO;
-    _frontLayer.hidden = NO;
 
     [CATransaction commit];
     
@@ -96,10 +92,10 @@
 
     [self dismissModalViewControllerAnimated:NO];    
 
+    self.animationView.hidden = NO;
     [CATransaction begin];
     [CATransaction setCompletionBlock:^{
-        _frontLayer.hidden = YES;
-        _backLayer.hidden = YES;
+        self.animationView.hidden = YES;
     }];
     
     CAAnimation *front = CAHFlipResizeAnimation(0.5f, -M_PI, 0.0, _backLayer.frame, _frontLayer.frame);
@@ -225,13 +221,11 @@
     
 	_frontLayer= [CALayer layer];
 	_frontLayer.doubleSided = NO;
-    _frontLayer.hidden = YES;
 	_frontLayer.name = @"Front";
 	[_frontLayer setMasksToBounds:YES];
     
 	_backLayer = [CALayer layer];
 	_backLayer.doubleSided = NO;
-    _backLayer.hidden = YES;
 	_backLayer.name = @"Back";
 	[_backLayer setMasksToBounds:YES];
 

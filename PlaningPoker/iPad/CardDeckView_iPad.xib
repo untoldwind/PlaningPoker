@@ -379,9 +379,9 @@
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
 					</object>
-					<object class="IBUIView" id="873125113">
+					<object class="IBUIView" id="328123664">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">274</int>
+						<int key="NSvFlags">-2147483374</int>
 						<string key="NSFrameSize">{768, 1004}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
@@ -396,7 +396,6 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIAutoresizesSubviews">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 				</object>
@@ -708,7 +707,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">animationView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="873125113"/>
+						<reference key="destination" ref="328123664"/>
 					</object>
 					<int key="connectionID">53</int>
 				</object>
@@ -743,7 +742,7 @@
 							<reference ref="50988456"/>
 							<reference ref="396821385"/>
 							<reference ref="826760757"/>
-							<reference ref="873125113"/>
+							<reference ref="328123664"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -840,7 +839,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
-						<reference key="object" ref="873125113"/>
+						<reference key="object" ref="328123664"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
