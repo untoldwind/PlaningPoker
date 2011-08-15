@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 #import "CardDecks.h"
 #import "CardHiddenViewController.h"
@@ -15,6 +16,7 @@
 
 @interface CardDeckViewController : UIViewController <CardHiddenViewControllerDelegate, SettingsViewControllerDelegate> {
     @private 
+    CALayer *_frontLayer, *_backLayer;
     BOOL _hideSelectedCard;
 }
 
@@ -24,6 +26,7 @@
 @property (nonatomic, readonly) id <CardBackground> currentCardBackground;
 @property (nonatomic) BOOL hideSelectedCard;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (nonatomic, retain) IBOutlet UIView *animationView;
 
 - (void)setCurrentDeckIndex:(NSInteger)deckIndex;
 - (void)setCurrentBackgroundIndex:(NSInteger)backgroundIndex;

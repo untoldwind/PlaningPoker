@@ -10,10 +10,12 @@
 
 #import "CardBackground.h"
 #import "CardSymbol.h"
+#import "CAHelper.h"
 
 @implementation CardDeckViewController
 
 @synthesize cardButtons = _cardButtons;
+@synthesize animationView = _animationView;
 @synthesize cardDecks = _cardDecks;
 @synthesize currentDeck = _currentDeck;
 @synthesize currentCardBackground = _currentCardBackground;
@@ -28,17 +30,84 @@
         controller = [[[CardHiddenViewController alloc] initWithNibName:@"CardHiddenView_iPhone" bundle:nil] autorelease];
     else
         controller = [[[CardHiddenViewController alloc] initWithNibName:@"CardHiddenView_iPad" bundle:nil] autorelease];
-        
+    
     controller.delegate = self;
     controller.cardValue = [self.currentDeck.cardValues objectAtIndex:button.tag];
+    
+    [CATransaction begin];
+    [CATransaction setValue: (id) kCFBooleanTrue forKey: kCATransactionDisableActions];
+    
+    UIGraphicsBeginImageContext(button.bounds.size);
+    [button.layer renderInContext:UIGraphicsGetCurrentContext()];
         
-    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentModalViewController:controller animated:YES];
+    _frontLayer.frame = button.frame;
+    _frontLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+    _frontLayer.hidden = NO;
+
+    UIGraphicsEndImageContext();
+    
+    UIGraphicsBeginImageContext(controller.view.bounds.size);
+    [controller.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    _backLayer.frame = button.frame;
+    _backLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+    _backLayer.hidden = NO;
+    
+    UIGraphicsEndImageContext();
+    
+    [CATransaction commit];
+
+    [CATransaction begin];
+    [CATransaction setCompletionBlock:^{
+        [self presentModalViewController:controller animated:NO];
+        _frontLayer.frame = button.frame;
+        _frontLayer.hidden = YES;
+        _backLayer.hidden = YES;
+    }];
+    
+    CAAnimation *front = CAHFlipResizeAnimation(0.5f, 0.0, -M_PI, button.frame, controller.view.bounds);
+    CAAnimation *back = CAHFlipResizeAnimation(0.5f, M_PI, 0.0, button.frame, controller.view.bounds);
+    [_frontLayer addAnimation:front forKey:@"flip"];
+    [_backLayer addAnimation:back forKey:@"flip"];
+    
+    [CATransaction commit];
+        
+//    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+//    [self presentModalViewController:controller animated:YES];
 }
 
 - (void)cardHiddenFinished:(CardHiddenViewController *)controller
 {
-    [self dismissModalViewControllerAnimated:YES];    
+    [CATransaction begin];
+    [CATransaction setValue: (id) kCFBooleanTrue forKey: kCATransactionDisableActions];
+
+    UIGraphicsBeginImageContext(controller.view.bounds.size);
+    [controller.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    _backLayer.frame = controller.view.bounds;
+    _backLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+    _backLayer.hidden = NO;
+    _frontLayer.hidden = NO;
+
+    [CATransaction commit];
+    
+    UIGraphicsEndImageContext();
+
+    [self dismissModalViewControllerAnimated:NO];    
+
+    [CATransaction begin];
+    [CATransaction setCompletionBlock:^{
+        _frontLayer.hidden = YES;
+        _backLayer.hidden = YES;
+    }];
+    
+    CAAnimation *front = CAHFlipResizeAnimation(0.5f, -M_PI, 0.0, _backLayer.frame, _frontLayer.frame);
+    CAAnimation *back = CAHFlipResizeAnimation(0.5f, 0.0, M_PI, _backLayer.frame, _frontLayer.frame);
+    [_frontLayer addAnimation:front forKey:@"flip"];
+    [_backLayer addAnimation:back forKey:@"flip"];
+    
+    [CATransaction commit];
 }
 
 - (IBAction)settings:(id)sender
@@ -146,11 +215,34 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
+	_frontLayer= [CALayer layer];
+	_frontLayer.doubleSided = NO;
+    _frontLayer.hidden = YES;
+	_frontLayer.name = @"Front";
+	[_frontLayer setMasksToBounds:YES];
+    
+	_backLayer = [CALayer layer];
+	_backLayer.doubleSided = NO;
+    _backLayer.hidden = YES;
+	_backLayer.name = @"Back";
+	[_backLayer setMasksToBounds:YES];
+
+    CGFloat zDistance = 1500.0f;
+    CATransform3D perspective = CATransform3DIdentity; 
+    perspective.m34 = -1. / zDistance;
+    _frontLayer.transform = perspective;
+    _backLayer.transform = perspective;
+    
+    [self.animationView.layer addSublayer:_backLayer];
+	[self.animationView.layer addSublayer:_frontLayer];
 
     NSDictionary *initDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [NSNumber numberWithBool:YES], @"hideSelectedCard", 
@@ -174,6 +266,8 @@
     [super viewDidUnload];
     [_cardDecks release];
     [_cardBackgrounds release];
+    [_frontLayer release];
+    [_backLayer release];
     self.cardButtons = nil;
 }
 

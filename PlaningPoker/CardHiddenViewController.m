@@ -23,8 +23,8 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5]; 
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
-    [self.revealButton setHidden:YES];
-    [self.cardButton setHidden:NO];
+    self.revealButton.hidden = YES;
+    self.cardButton.hidden = NO;
     [UIView commitAnimations];
 }
 
@@ -78,8 +78,8 @@
                                forState:UIControlStateNormal];
     [self.revealButton setBackgroundImage:[self.delegate.currentCardBackground hidden:self.revealButton.frame.size] forState:UIControlStateNormal];
     if (!self.delegate.hideSelectedCard) {
-        [self.revealButton setHidden:YES];
-        [self.cardButton setHidden:NO];
+        self.revealButton.hidden = YES;
+        self.cardButton.hidden = NO;
     }
 }
 

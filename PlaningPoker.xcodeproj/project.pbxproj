@@ -48,6 +48,8 @@
 		887D7B4613E74D4D0034BB10 /* SimpleCardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D7B4513E74D4D0034BB10 /* SimpleCardBackground.m */; };
 		88962C1213F7C77E00EE2C3C /* coffee_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 88962C1113F7C77E00EE2C3C /* coffee_mask.png */; };
 		88962C1513F7C7B900EE2C3C /* CardSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 88962C1413F7C7B900EE2C3C /* CardSymbol.m */; };
+		88CD049813F98C5F00F328BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CD049713F98C5F00F328BA /* QuartzCore.framework */; };
+		88EFFAE413F99E1D0078C0B5 /* CAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFFAE313F99E1D0078C0B5 /* CAHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,9 @@
 		88962C1113F7C77E00EE2C3C /* coffee_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_mask.png; sourceTree = "<group>"; };
 		88962C1413F7C7B900EE2C3C /* CardSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSymbol.m; sourceTree = "<group>"; };
 		88962C1613F7C7D000EE2C3C /* CardSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSymbol.h; sourceTree = "<group>"; };
+		88CD049713F98C5F00F328BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		88EFFAE213F99E1D0078C0B5 /* CAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAHelper.h; sourceTree = "<group>"; };
+		88EFFAE313F99E1D0078C0B5 /* CAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,7 @@
 				8826C12613E6DE2E004982E7 /* UIKit.framework in Frameworks */,
 				8826C12813E6DE2E004982E7 /* Foundation.framework in Frameworks */,
 				8826C12A13E6DE2E004982E7 /* CoreGraphics.framework in Frameworks */,
+				88CD049813F98C5F00F328BA /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +177,7 @@
 		8826C12413E6DE2E004982E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88CD049713F98C5F00F328BA /* QuartzCore.framework */,
 				8826C12513E6DE2E004982E7 /* UIKit.framework */,
 				8826C12713E6DE2E004982E7 /* Foundation.framework */,
 				8826C12913E6DE2E004982E7 /* CoreGraphics.framework */,
@@ -184,6 +191,8 @@
 			children = (
 				8841835813F5869B00930751 /* CGHelper.h */,
 				8841835913F5869B00930751 /* CGHelper.m */,
+				88EFFAE213F99E1D0078C0B5 /* CAHelper.h */,
+				88EFFAE313F99E1D0078C0B5 /* CAHelper.m */,
 				88962C1613F7C7D000EE2C3C /* CardSymbol.h */,
 				88962C1413F7C7B900EE2C3C /* CardSymbol.m */,
 				8841835413F57AB300930751 /* CardBackground.h */,
@@ -408,6 +417,7 @@
 				8841835713F57D1500930751 /* OCCardBackground.m in Sources */,
 				8841835A13F5869C00930751 /* CGHelper.m in Sources */,
 				88962C1513F7C7B900EE2C3C /* CardSymbol.m in Sources */,
+				88EFFAE413F99E1D0078C0B5 /* CAHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
