@@ -8,13 +8,17 @@
 
 #import "CAHelper.h"
 
-CAAnimation *CAHFlipResizeAnimation(NSTimeInterval duration, CGFloat rotationStart, CGFloat rotationEnd, CGRect beginRect, CGRect endRect)
+CAAnimation *CAHFlipResizeAnimation(NSTimeInterval duration, CGFloat yRotationStart, CGFloat yRotationEnd, CGFloat zRotationStart, CGFloat zRotationEnd, CGRect beginRect, CGRect endRect)
 {    
     // Rotating halfway (pi radians) around the Y axis gives the appearance of flipping
     CABasicAnimation *flipAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
-    flipAnimation.fromValue = [NSNumber numberWithDouble:rotationStart];
-    flipAnimation.toValue = [NSNumber numberWithDouble:rotationEnd];
+    flipAnimation.fromValue = [NSNumber numberWithDouble:yRotationStart];
+    flipAnimation.toValue = [NSNumber numberWithDouble:yRotationEnd];
 
+    CABasicAnimation *flipAnimation2 = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    flipAnimation2.fromValue = [NSNumber numberWithDouble:zRotationStart];
+    flipAnimation2.toValue = [NSNumber numberWithDouble:zRotationEnd];
+    
     CABasicAnimation *resizeXAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
     resizeXAnimation.fromValue = [NSNumber numberWithDouble:beginRect.origin.x + beginRect.size.width / 2];
     resizeXAnimation.toValue = [NSNumber numberWithDouble:endRect.origin.x + endRect.size.width / 2];
@@ -25,15 +29,15 @@ CAAnimation *CAHFlipResizeAnimation(NSTimeInterval duration, CGFloat rotationSta
 
     CABasicAnimation *resizeWidthAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
     resizeWidthAnimation.fromValue = [NSNumber numberWithDouble:beginRect.size.width];
-    resizeWidthAnimation.toValue = [NSNumber numberWithDouble:endRect.size.width];
+    resizeWidthAnimation.toValue = [NSNumber numberWithDouble:zRotationEnd > 0.0 ? endRect.size.height : endRect.size.width];
 
     CABasicAnimation *resizeHeightAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.height"];
     resizeHeightAnimation.fromValue = [NSNumber numberWithDouble:beginRect.size.height];
-    resizeHeightAnimation.toValue = [NSNumber numberWithDouble:endRect.size.height];
+    resizeHeightAnimation.toValue = [NSNumber numberWithDouble:zRotationEnd > 0.0 ? endRect.size.width : endRect.size.height];
 
     // Combine the flipping and shrinking into one smooth animation
     CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
-    animationGroup.animations = [NSArray arrayWithObjects:flipAnimation, resizeXAnimation, resizeYAnimation, resizeWidthAnimation, resizeHeightAnimation, nil];
+    animationGroup.animations = [NSArray arrayWithObjects:flipAnimation, flipAnimation2, resizeXAnimation, resizeYAnimation, resizeWidthAnimation, resizeHeightAnimation, nil];
     
     // As the edge gets closer to us, it appears to move faster. Simulate this in 2D with an easing function
     animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];

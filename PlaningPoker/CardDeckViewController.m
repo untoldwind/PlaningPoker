@@ -14,8 +14,6 @@
 
 @implementation CardDeckViewController
 
-@synthesize cardButtons = _cardButtons;
-@synthesize animationView = _animationView;
 @synthesize cardDecks = _cardDecks;
 @synthesize currentDeck = _currentDeck;
 @synthesize currentCardBackground = _currentCardBackground;
@@ -55,19 +53,26 @@
     
     [CATransaction commit];
 
-    self.animationView.hidden = NO;
+    _animationView.hidden = NO;
     [CATransaction begin];
     [CATransaction setCompletionBlock:^{
         [self presentModalViewController:controller animated:NO];
-        _frontLayer.frame = button.frame;
-        self.animationView.hidden = YES;
+//        _frontLayer.frame = button.frame;
+        _animationView.hidden = YES;
     }];
-    
-    CAAnimation *front = CAHFlipResizeAnimation(0.5f, 0.0, -M_PI, button.frame, controller.view.bounds);
-    CAAnimation *back = CAHFlipResizeAnimation(0.5f, M_PI, 0.0, button.frame, controller.view.bounds);
-    [_frontLayer addAnimation:front forKey:@"flip"];
-    [_backLayer addAnimation:back forKey:@"flip"];
-    
+
+    BOOL portrait = UIDeviceOrientationIsPortrait(_orientation);
+    if ( portrait ) {
+        CAAnimation *front = CAHFlipResizeAnimation(0.5f, 0.0, -M_PI, 0.0, 0.0, button.frame, _animationView.bounds);
+        CAAnimation *back = CAHFlipResizeAnimation(0.5f, M_PI, 0.0, 0.0, 0.0, button.frame, _animationView.bounds);
+        [_frontLayer addAnimation:front forKey:@"flip"];
+        [_backLayer addAnimation:back forKey:@"flip"];
+    } else {
+        CAAnimation *front = CAHFlipResizeAnimation(0.5f, 0.0, -M_PI, 0.0, M_PI_2, button.frame, _animationView.bounds);
+        CAAnimation *back = CAHFlipResizeAnimation(0.5f, M_PI, 0.0, 0.0, M_PI_2, button.frame, _animationView.bounds);
+        [_frontLayer addAnimation:front forKey:@"flip"];
+        [_backLayer addAnimation:back forKey:@"flip"];    
+    }
     [CATransaction commit];
         
 //    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -83,7 +88,7 @@
     UIGraphicsBeginImageContext(controller.view.bounds.size);
     [controller.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    _backLayer.frame = controller.view.bounds;
+    _backLayer.frame = _animationView.bounds;
     _backLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
 
     [CATransaction commit];
@@ -92,16 +97,24 @@
 
     [self dismissModalViewControllerAnimated:NO];    
 
-    self.animationView.hidden = NO;
+    _animationView.hidden = NO;
     [CATransaction begin];
     [CATransaction setCompletionBlock:^{
-        self.animationView.hidden = YES;
+        _animationView.hidden = YES;
     }];
     
-    CAAnimation *front = CAHFlipResizeAnimation(0.5f, -M_PI, 0.0, _backLayer.frame, _frontLayer.frame);
-    CAAnimation *back = CAHFlipResizeAnimation(0.5f, 0.0, M_PI, _backLayer.frame, _frontLayer.frame);
-    [_frontLayer addAnimation:front forKey:@"flip"];
-    [_backLayer addAnimation:back forKey:@"flip"];
+    BOOL portrait = UIDeviceOrientationIsPortrait(_orientation);
+    if ( portrait ) {
+        CAAnimation *front = CAHFlipResizeAnimation(0.5f, -M_PI, 0.0, 0.0, 0.0, _backLayer.frame, _frontLayer.frame);
+        CAAnimation *back = CAHFlipResizeAnimation(0.5f, 0.0, M_PI, 0.0, 0.0, _backLayer.frame, _frontLayer.frame);
+        [_frontLayer addAnimation:front forKey:@"flip"];
+        [_backLayer addAnimation:back forKey:@"flip"];
+    } else {
+        CAAnimation *front = CAHFlipResizeAnimation(0.5f, -M_PI, 0.0, M_PI_2, 0.0, _backLayer.frame, _frontLayer.frame);
+        CAAnimation *back = CAHFlipResizeAnimation(0.5f, 0.0, M_PI, M_PI_2, 0.0, _backLayer.frame, _frontLayer.frame);
+        [_frontLayer addAnimation:front forKey:@"flip"];
+        [_backLayer addAnimation:back forKey:@"flip"];        
+    }
     
     [CATransaction commit];
 }
@@ -124,6 +137,75 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (void)createButtons:(NSInteger)count
+{    
+    for (UIButton *button in _cardButtons) {
+        [button removeFromSuperview];
+    }
+    [_cardButtons removeAllObjects];
+    
+    for ( NSInteger i = 0; i < count; i++ ) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0,0,100,100);
+        button.tag = i;
+        [button addTarget:self action:@selector(selectCard:) forControlEvents:UIControlEventTouchDown];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20.0];
+            button.titleLabel.shadowOffset = CGSizeMake(1, 1);
+        } else {
+            button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:50.0];
+            button.titleLabel.shadowOffset = CGSizeMake(2, 2);            
+        }
+        
+        [self.view insertSubview:button belowSubview:_animationView];
+        [_cardButtons addObject:button];
+    }
+}
+
+- (void)arrangeButtons
+{
+    CGSize size = self.view.bounds.size;
+    
+    int xcount;
+    int ycount;
+    BOOL portrait = UIDeviceOrientationIsPortrait(_orientation);
+    CGSize buttonSize;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if ( portrait ) {
+            buttonSize = CGSizeMake(75, 100);
+            xcount = 4;
+            ycount = 4;
+        } else {
+            buttonSize = CGSizeMake(75, 95);            
+            xcount = 5;
+            ycount = 3;
+            size.width -= 40;
+        }        
+    } else {
+        if ( portrait ) {
+            buttonSize = CGSizeMake(175, 230);
+            xcount = 4;
+            ycount = 4;
+        } else {
+            buttonSize = CGSizeMake(175, 230);            
+            xcount = 5;
+            ycount = 3;
+            size.width -= 40;
+        }        
+    }
+
+    for ( int i = 0; i < ycount; i++ ) {
+        for ( int j = 0; j < xcount; j++ ) {
+            if ( i * xcount + j >= _cardButtons.count )
+                break;
+            
+            UIButton *button = [_cardButtons objectAtIndex:i * xcount + j];
+            button.frame = CGRectMake((j + 0.5) * size.width / xcount - 0.5 * buttonSize.width, (i + 0.5) * size.height / ycount - 0.5 * buttonSize.height, buttonSize.width, buttonSize.height);
+        }
+    }
+}
+
+
 - (IBAction)setCurrentDeckIndex:(NSInteger)deckIndex
 {
     if (_currentDeck != nil) {
@@ -134,7 +216,14 @@
     
     _currentDeck = [self.cardDecks deckByIndex:deckIndex];
     
-    for (UIButton *button in self.cardButtons) {
+    [self createButtons:_currentDeck.numberOfCards];
+    [self arrangeButtons];
+    
+    for (UIButton *button in _cardButtons) {
+        [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateNormal];
+        [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateHighlighted];
+        [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateNormal];
+        [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateHighlighted];
         if (button.tag >= self.currentDeck.cardValues.count) {
             button.hidden = YES;
         } else {
@@ -171,13 +260,6 @@
     }
 
     _currentCardBackground = [self.cardBackgrounds backgroundByIndex:backgroundIndex];
-
-    for (UIButton *button in self.cardButtons) {
-        [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateNormal];
-        [button setTitleColor:self.currentCardBackground.textColor forState:UIControlStateHighlighted];
-        [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateNormal];
-        [button setTitleShadowColor:self.currentCardBackground.shadowColor forState:UIControlStateHighlighted];
-    }
 }
 
 
@@ -217,9 +299,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-	_frontLayer= [CALayer layer];
+    _orientation = [[UIApplication sharedApplication] statusBarOrientation];
+
+    _cardButtons = [[NSMutableArray alloc] initWithCapacity:14];
+    
+    _animationView = [[UIView alloc] initWithFrame:self.view.bounds] ;
+    _animationView.opaque = NO;
+    _animationView.backgroundColor = [UIColor clearColor];
+    _animationView.hidden = YES;
+    _animationView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    [self.view addSubview:_animationView];
+    
+	_frontLayer = [CALayer layer];
 	_frontLayer.doubleSided = NO;
 	_frontLayer.name = @"Front";
 	[_frontLayer setMasksToBounds:YES];
@@ -235,8 +328,8 @@
     _frontLayer.transform = perspective;
     _backLayer.transform = perspective;
     
-    [self.animationView.layer addSublayer:_backLayer];
-	[self.animationView.layer addSublayer:_frontLayer];
+    [_animationView.layer addSublayer:_backLayer];
+	[_animationView.layer addSublayer:_frontLayer];
 
     NSDictionary *initDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [NSNumber numberWithBool:YES], @"hideSelectedCard", 
@@ -262,12 +355,34 @@
     [_cardBackgrounds release];
     [_frontLayer release];
     [_backLayer release];
-    self.cardButtons = nil;
+    [_cardButtons release];
+    [_animationView release];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait) || (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:duration]; 
+    _orientation = toInterfaceOrientation;
+    [self arrangeButtons];
+    [UIView commitAnimations];
 }
 
+- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:duration]; 
+    [self arrangeButtons];
+    [UIView commitAnimations];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+//    [self arrangeButtons];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
 @end

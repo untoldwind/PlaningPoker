@@ -16,4 +16,6 @@
 + (id)withName:(NSString *)name cardValues:(NSArray *)cardValues;
 - (id)initWithName:(NSString *)name cardValues:(NSArray *)cardValues;
 
+- (NSInteger)numberOfCards;
+
 @end

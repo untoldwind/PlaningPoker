@@ -36,4 +36,9 @@
     [super dealloc];
 }
 
+- (NSInteger)numberOfCards
+{
+    return _cardValues.count;
+}
+
 @end
