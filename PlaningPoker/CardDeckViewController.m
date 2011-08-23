@@ -57,6 +57,7 @@
     [CATransaction begin];
     [CATransaction setCompletionBlock:^{
         [self presentModalViewController:controller animated:NO];
+        controller.view.frame = _currentFrame;
 //        _frontLayer.frame = button.frame;
         _animationView.hidden = YES;
     }];
@@ -95,7 +96,8 @@
     
     UIGraphicsEndImageContext();
 
-    [self dismissModalViewControllerAnimated:NO];    
+    [self dismissModalViewControllerAnimated:NO];
+    self.view.frame = _currentFrame;
 
     _animationView.hidden = NO;
     [CATransaction begin];
@@ -346,6 +348,8 @@
     self.hideSelectedCard = [userDefaults boolForKey:@"hideSelectedCard"];
     [self setCurrentBackgroundIndex:[userDefaults integerForKey:@"activeCardBackground"]];
     [self setCurrentDeckIndex:[userDefaults integerForKey:@"activeCardDeck"]];
+
+    _currentFrame = self.view.frame;
 }
 
 - (void)viewDidUnload
@@ -378,7 +382,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-//    [self arrangeButtons];
+    _currentFrame = self.view.frame;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

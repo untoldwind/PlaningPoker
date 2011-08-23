@@ -21,6 +21,7 @@
     UIView *_animationView;
     CALayer *_frontLayer, *_backLayer;
     BOOL _hideSelectedCard;
+    CGRect _currentFrame;
 }
 
 @property (nonatomic, readonly) CardDecks *cardDecks;
