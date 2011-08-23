@@ -82,6 +82,15 @@
     return nil;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    switch (section) {
+        case 2:
+            return @"PlanningPocker® is a registered trademark of Mountain Goat Software, LLC\nSequence of values is © Mountain Goat Software, LLC";
+    }
+    return nil;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch(section) {
